@@ -48,7 +48,7 @@ if (isset($_POST['login'])) {
             if ($userType === 'customer') {
                 header("Location: index.php");
             } elseif ($userType === 'owner') {
-                header("Location: add.php");
+                header("Location: dashborad.php");
             }
             exit();
         } else {
