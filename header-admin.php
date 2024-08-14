@@ -180,6 +180,6 @@
             margin-bottom: 15px;
         }
     </style>
-</style>
+
   </header><!-- End Header -->
 

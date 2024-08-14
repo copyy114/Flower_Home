@@ -99,6 +99,53 @@
           <li><a class="nav-link scrollto" href="#events">โปรโมชั่น</a></li>
           <li><a class="nav-link scrollto" href="#gallery">แกลอรี่</a></li>
           <li><a class="nav-link scrollto" href="#contact">ติดต่อ</a></li>
+          <li class="dropdown"><a href="#"><span>ตั้งค้าผู้ใช้</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li>
+                <style>
+                  .edit-session-user{
+                  background: #e6e6e6;
+                  color: #FFF; 
+                  font-size: 15px; 
+                  background-color: rgb(228, 64, 201);
+                  padding : 10px;
+                    border-radius: 8px;
+
+                  }
+               </style>
+                    <h5 class="container-fluid">
+                      <?php
+                      @ini_set('display_errors', '0');
+                      $fname = isset($_SESSION['fname']) ? $_SESSION['fname'] : 'ผู้ใช้';
+
+                      echo '<div class="edit-session-user">';
+                      echo 'สวัสดี ' . htmlspecialchars($fname, ENT_QUOTES, 'UTF-8');
+                      echo '</div>';
+                      ?>
+                  </h5>
+              
+                <?php $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;?>
+                 
+                  <h5 class="container-fluid">
+                    <div>
+                      <?php
+                                if ($isLoggedIn) {
+                                    echo '<a href="logout.php" class="btn btn-success" style="color: white;">ออกจากระบบ<i class="fas fa-sign-out"></i></a>';
+                                } else {
+                                    echo '<a href="login.php" class="btn btn-danger" style="color: white;">เข้าสู่ระบบ <i class="fas fa-sign-in"></i></a>';
+                                }
+                              ?>
+                 
+                    </div>
+                  </h5>
+          
+              </li>
+              <li>
+                
+              </li>
+
+            </ul>  
+          </li>
           <style>
             .cart {
     background-color: #ffffff; /* พื้นหลังของเมนูตะกร้า */
@@ -155,4 +202,109 @@
         .price-details{
           padding: 10px;
         }
+
+      .container-edit-new{
+            margin-top: 5% ;
+
+      }
+      .container-nbg {
+            /* margin-top: 5% ; */
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .container-edit{
+            /* margin-top: 10% ; */
+            background-color:#ffdee0 ;
+            padding: 20px;
+            border-radius: 20px;
+        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f4f4f4;
+    }
+    img {
+        max-width: 100px; /* ปรับขนาดรูปภาพให้เหมาะสม */
+        height: auto;
+    }
+
+        
+        body {
+  font-family: "Kanit", sans-serif !important;
+            margin: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        form .form-edit {
+           
+            border-radius: 8px;
+            background-color: #000;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="password"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="reset"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #ff2d00;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        input[type="reset"]:hover {
+            background-color: #cf2500;
+        }
+        
+        .form-group {
+            margin-bottom: 12px;
+        }
+        .message {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
 </style>

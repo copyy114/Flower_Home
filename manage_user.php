@@ -28,12 +28,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $message = "ชื่อผู้ใช้นี้ถูกใช้ไปแล้ว กรุณาเลือกชื่อผู้ใช้ใหม่";
     } else {
         // เข้ารหัสรหัสผ่าน
-        $password_hash = password_hash($password, PASSWORD_DEFAULT);
+
 
         // สร้างคำสั่ง SQL สำหรับการเพิ่มข้อมูล
         $sql_insert = "INSERT INTO users (fname, username, user_type, password) VALUES (?, ?, ?, ?)";
         $stmt_insert = $conn->prepare($sql_insert);
-        $stmt_insert->bind_param("ssss", $fname, $username, $user_type, $password_hash);
+        $stmt_insert->bind_param("ssss", $fname, $username, $user_type, $password);
 
         // Execute และตรวจสอบการสำเร็จ
         if ($stmt_insert->execute()) {

@@ -1,6 +1,8 @@
 <?php
 session_start();
 include("conn.php");
+include("./header_option.php");
+
 
 // Function to get product data
 function getProductData($conn, $pids) {
@@ -56,26 +58,23 @@ if (isset($_GET['action']) && $_GET['action'] == 'clear_cart') {
   header('Location: cart.php');
   exit();
 }
-include("./header_option.php");
+
+
+// Check login status
+$isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
 ?>
 
-    <style>
-        .container{
-            margin-top: 10% ;
-            background-color:#ffdee0 ;
-            padding: 20px;
-            border-radius: 20px;
-        }
-        .price-details{
-          padding: 10px;
-        }
-</style>
+<!-- debug check login นะ
+<?php echo  $_SESSION['fname'] ?> -->
+
+
         <div class="container">
             <div class="row px-5">
                 <div class="col-md-7">
                     <div class="shopping-cart">
                         <h2>ตะกร้าสินค้า</h2>
                         <hr>
+
 
                         <?php
                         $total = 0;
@@ -113,13 +112,11 @@ include("./header_option.php");
                                     echo '        <p>รายละเอียดสินค้า : ' . htmlspecialchars($description) . '</p>';
                                     echo '        <p>ราคา : ' . $formattedPrice . '</p>';
 
-                                    // Form for updating quantit
-                                    echo '            <div class="form-edit">';
-                                    
-                                    echo '        <form  method="POST" action="cart.php">';
+                                    // Form for updating quantity
+                                    echo '        <form method="POST" action="cart.php">';
                                     echo '            <input type="hidden" name="action" value="update_qty">';
                                     echo '            <input type="hidden" name="pid" value="' . $id . '">';
-                                    echo '            <div class="input-group ">';
+                                    echo '            <div class="input-group mb-3">';
                                     echo '                <input type="text" class="form-control text-center" name="quantity" value="' . intval($_SESSION['cart'][$id]) . '">';
                                     echo '                <div class="input-group-append">';
                                     echo '                    <button class="btn btn-outline-secondary" type="submit" name="quantity" value="' . (intval($_SESSION['cart'][$id]) + 1) . '">+</button>';
@@ -127,7 +124,6 @@ include("./header_option.php");
                                     echo '                </div>';
                                     echo '            </div>';
                                     echo '        </form>';
-                                    echo '    </div>';
                                     echo '    </div>';
                                     echo '    <div class="col-md-3 text-right">';
                                     echo '        <a href="cart.php?action=removeItem&id=' . $id . '" class="btn btn-danger">ลบรายการ</a>';
@@ -170,19 +166,18 @@ include("./header_option.php");
                             </div>
                             <hr>
                             <div class="col-12 text-center">
-
-                                <!-- <?php
-                                error_reporting(0);
-                                echo '        <a href="checkout.php?action=add&id=' . $id . '" class="btn btn-success">  <i class="fas fa-shopping-cart"></i> ยืนยันการสั่งซื้อสินค้า</a>';
-                                ?> -->
-                                 <?php
-                                $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
+                                <?php
+                                 echo '<a href="checkout.php?action=add&id=' . $id . '" class="btn btn-success"><i class="fas fa-shopping-cart"></i> ยืนยันการสั่งซื้อสินค้า</a>';
+                                 
+                                ?>
+                           
+                              <!-- <?php
                                 if ($isLoggedIn) {
                                     echo '<a href="checkout.php?action=add&id=' . $id . '" class="btn btn-success"><i class="fas fa-shopping-cart"></i> ยืนยันการสั่งซื้อสินค้า</a>';
                                 } else {
                                     echo '<a href="logout.php" class="btn btn-danger"><i class="fas fa-sign-in-alt"></i> กรุณาเข้าสู่ระบบก่อนทำการสั่งซื้อ</a>';
                                 }
-                              ?>
+                              ?> -->
                             </div>
                         </div>
                     </div>

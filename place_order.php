@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Clear the cart
     unset($_SESSION['cart']);
     
-    echo "<script>alert('Order placed successfully!')</script>";
+    echo "<script>alert('สั่งซื้อสินค้า สำเร็จ!')</script>";
     echo "<script>window.location = 'thank_you.php'</script>";
     exit();
 }

@@ -16,7 +16,7 @@ if (!empty($last_login)) {
 }
 
 if (!empty($password)) {
-    $password_hash = password_hash($password, PASSWORD_BCRYPT); // เข้ารหัสรหัสผ่าน
+    $password = $password; // เข้ารหัสรหัสผ่าน
     $sql .= ", password=?";
 }
 
@@ -33,7 +33,7 @@ if (!empty($last_login)) {
 }
 
 if (!empty($password)) {
-    $params[] = $password_hash;
+    $params[] = $password;
     $types .= 's';
 }
 
