@@ -20,8 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `flowerhome`
 --
-CREATE DATABASE IF NOT EXISTS `flowerhome1` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `flowerhome1`;
+CREATE DATABASE IF NOT EXISTS `flowerhome` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `flowerhome`;
 
 -- --------------------------------------------------------
 
