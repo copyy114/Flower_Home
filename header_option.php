@@ -200,11 +200,11 @@
             border-radius: 20px;
         }
         .price-details{
-          padding: 10px;
+          padding: 10px; 
         }
 
       .container-edit-new{
-            margin-top: 5% ;
+            margin-top: 7% ;
 
       }
       .container-nbg {
