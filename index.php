@@ -46,7 +46,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>รอ <span>55555ปรับปรุง จะดึงรูปจาก ดอกไม้ 25 บาท มา</span></h2>
+          <h2>รอ <span>ปรับปรุง จะดึงรูปจาก ดอกไม้ 25 บาท มา</span></h2>
           <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
         </div>
 
@@ -55,7 +55,7 @@
           <div class="col-lg-4">
             <div class="box">
               <span>01</span>
-              <h4>Lorem ทดสอบ555</h4>
+              <h4>Lorem ทดสอบ</h4>
               <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
             </div>
           </div>
