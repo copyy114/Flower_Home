@@ -55,7 +55,7 @@
           <div class="col-lg-4">
             <div class="box">
               <span>01</span>
-              <h4>Lorem ทดสอบ</h4>
+              <h4>Lorem ทดสอบ555</h4>
               <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
             </div>
           </div>
