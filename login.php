@@ -67,66 +67,170 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หน้า Login</title>
+    <title>Flower's Home</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/logoheader.png" rel="apple-touch-icon">
+  <script src="https://kit.fontawesome.com/31da23dcf7.js" crossorigin="anonymous"></script>
+ 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sarabun:ital,wght@0,300;1,100&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/style.css" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Kanit", sans-serif !important;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            background-color: #fff2f3;
+
         }
-        .login-container {
-            width: 300px;
+      .container-edit-new{
+            margin-top: 5% ;
+
+      }
+   
+        form {
+            max-width: 600px;
+            margin: 0 auto;
             padding: 20px;
-            background:white;
+            border: 1px solid #ddd;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: #f9f9f9;
         }
-        .login-container h2 {
-            margin-top: 0;
+        h1 {
+            text-align: center;
+            color: #333;
         }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
+        label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            font-weight: bold;
         }
-        .form-group input, .form-group select {
+        input[type="text"], input[type="password"], select {
             width: 100%;
             padding: 8px;
-            box-sizing: border-box;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
-        .form-group button {
+        input[type="submit"] {
             width: 100%;
             padding: 10px;
+            border: none;
+            border-radius: 4px;
             background-color: #007bff;
             color: white;
-            border: none;
-            border-radius: 5px;
+            font-size: 16px;
             cursor: pointer;
         }
-        .form-group button:hover {
+        input[type="reset"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #ff2d00;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
             background-color: #0056b3;
         }
-        .error {
+        input[type="reset"]:hover {
+            background-color: #cf2500;
+        }
+        .form-group {
+            margin-bottom: 12px;
+        }
+        .message {
             color: red;
+            font-weight: bold;
+            text-align: center;
             margin-bottom: 15px;
         }
+            button {
+            width: 100%;
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: #039c4b;
+            font-size: 16px;
+            cursor: pointer;
+        }
+            button:hover {
+                background-color: #037e3c;
+            }
+            a {
+                color: aliceblue;
+            }
+            a:hover{
+                color: aliceblue;
+            }
+            button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+          }
+          button[type="reset"] {
+              width: 100%;
+              padding: 10px;
+              border: none;
+              border-radius: 4px;
+              background-color: #ff2d00;
+              color: white;
+              font-size: 16px;
+              cursor: pointer;
+          }
+          button[type="submit"]:hover {
+              background-color: #0056b3;
+          }
+          button[type="reset"]:hover {
+              background-color: #cf2500;
+          }
+     
+ 
     </style>
 </head>
 <body>
 
-<div class="login-container">
-    <h2>เข้าสู่ระบบ</h2>
-    <?php if (isset($error)) { echo "<div class='error'>$error</div>"; } ?>
+<div class="container container-edit-new">
+    <h1>เข้าสู่ระบบ</h1>
+    <?php if (isset($error)) { echo "<div class='message'>$error</div>"; } ?>
     <form method="POST" action="">
-        <div class="form-group">
-            <label for="username">ชื่อผู้ใช้:</label>
+    <div class="form-group">
+            <div class="row">
+                <div class="col-9">
+                    <div class=""><label for="fname">ชื่อผู้ใช้:</label></div>
+                </div>    
+                <div class="col-3">
+                    <div class="mb-2"><button ><a href="./register_user.php">ลงทะเบียน</a></button></div>
+                </div>
+            </div>
             <input type="text" id="username" name="username" required>
         </div>
+   
         <div class="form-group">
             <label for="password">รหัสผ่าน:</label>
             <input type="password" id="password" name="password" required>
@@ -138,9 +242,15 @@ $conn->close();
                 <option value="owner">เจ้าของร้าน</option>
             </select>
         </div>
-        <div class="form-group">
-            <button type="submit" name="login">เข้าสู่ระบบ</button>
+        <div class="row">
+            <div class="col-6">
+                <button type="submit" name="login">เข้าสู่ระบบ</button>
+            </div>
+            <div class="col-6">
+                <button type="reset" name="login">ยกเลิก</button>
+            </div>
         </div>
+
     </form>
 </div>
 
