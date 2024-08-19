@@ -104,7 +104,7 @@
 
           <div class="col-lg-6 menu-item filter-starters">
             <div class="menu-content">
-              <a href="#">Lobster Bisque</a><span>$5.95</span>
+              <a href="#">สีเเดง</a><span>$5.95</span>
             </div>
             <div class="menu-ingredients">
               Lorem, deren, trataro, filede, nerada
@@ -113,7 +113,7 @@
 
           <div class="col-lg-6 menu-item filter-specialty">
             <div class="menu-content">
-              <a href="#">Bread barrel</a><span>$6.95</span>
+              <a href="#">สีขาว</a><span>$6.95</span>
             </div>
             <div class="menu-ingredients">
               Lorem, deren, trataro, filede, nerada
@@ -291,7 +291,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Organize Your <span>Events</span> in our Restaurant</h2>
+          <h2>สวัสดี<span>ฐิติพร</span>สวยๆ</h2>
         </div>
 
         <div class="events-slider swiper">
@@ -300,10 +300,10 @@
             <div class="swiper-slide">
               <div class="row event-item">
                 <div class="col-lg-6">
-                  <img src="assets/img/event-birthday.jpg" class="img-fluid" alt="">
+                  <img src="assets/img/h.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
-                  <h3>Birthday Parties</h3>
+                  <h3>ช่อดอกไม้ สวยๆ</h3>
                   <div class="price">
                     <p><span>$189</span></p>
                   </div>
@@ -327,10 +327,10 @@
             <div class="swiper-slide">
               <div class="row event-item">
                 <div class="col-lg-6">
-                  <img src="assets/img/event-private.jpg" class="img-fluid" alt="">
+                  <img src="assets/img/h.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
-                  <h3>Private Parties</h3>
+                  <h3>ช่อดอกไม้ น่ารักๆ</h3>
                   <div class="price">
                     <p><span>$290</span></p>
                   </div>
@@ -354,10 +354,10 @@
             <div class="swiper-slide">
               <div class="row event-item">
                 <div class="col-lg-6">
-                  <img src="assets/img/event-custom.jpg" class="img-fluid" alt="">
+                  <img src="assets/img/h.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
-                  <h3>Custom Parties</h3>
+                  <h3>ช่อดอกไม้ งามมากๆ</h3>
                   <div class="price">
                     <p><span>$99</span></p>
                   </div>
@@ -402,7 +402,7 @@
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
               <a href="assets/img/gallery/gallery-1.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
+                <img src="assets/img/h.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
@@ -410,7 +410,7 @@
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
               <a href="assets/img/gallery/gallery-2.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
+                <img src="assets/img/h.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
@@ -418,7 +418,7 @@
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
               <a href="assets/img/gallery/gallery-3.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
+                <img src="assets/img/h.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
@@ -426,7 +426,7 @@
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
               <a href="assets/img/gallery/gallery-4.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
+                <img src="assets/img/h.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
@@ -434,7 +434,7 @@
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
               <a href="assets/img/gallery/gallery-5.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
+                <img src="assets/img/h.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
@@ -442,7 +442,7 @@
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
               <a href="assets/img/gallery/gallery-6.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
+                <img src="assets/img/h.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
@@ -450,7 +450,7 @@
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
               <a href="assets/img/gallery/gallery-7.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
+                <img src="assets/img/h.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
@@ -458,7 +458,7 @@
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
               <a href="assets/img/gallery/gallery-8.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
+                <img src="assets/img/h.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
@@ -543,15 +543,15 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
+                <img src="assets/img/ออย.jpg" class="testimonial-img" alt="">
+                <h3>ญาณัจฉรา ชูเล็ก</h3>
+                <h4>ชื่อเล่นออย</h4>
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  ชิ้นงานดูดี น่าชื่นชม เยี่ยมมม สุดยอดมากก เก่งสุด ดอกไม้สวยสุดๆ
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -559,15 +559,15 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
+                <img src="assets/img/ฟู.jpg" class="testimonial-img" alt="">
+                <h3>ณัชปฏิภาณ  พิกุลศรี</h3>
+                <h4>ชื่อเล่นฟูจิ</h4>
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  ความก้าวหน้าเล็กๆ น้อยๆ ในแต่ละวัน นำมาซึ่งผลลัพธ์ที่ยิ่งใหญ่
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -575,15 +575,15 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
+                <img src="assets/img/นาว.jpg" class="testimonial-img" alt="">
+                <h3>ฐิติรัตน์ ชูเพชร</h3>
+                <h4>ชื่อเล่นมะนาว</h4>
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  ห่อหุ้มตัวเองด้วยความแกร่ง อุ้มตัวเองด้วยความมั่นใจ และก้าวต่อไปให้ถึงจุดหมาย
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -591,15 +591,15 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
+                <img src="assets/img/โด.jpg" class="testimonial-img" alt="">
+                <h3>กมลรัตน์ สุขเกษม</h3>
+                <h4>ชื่อเล่นโดนัท</h4>
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  ผู้หญิงทุกคนเป็นผู้หญิงทำงาน… มีเพียงไม่กี่คนเท่านั้นที่ได้รับเงินเดือน (ประชด) 
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -607,15 +607,15 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
+                <img src="assets/img/นัท.jpg" class="testimonial-img" alt="">
+                <h3>นันทิยา ขาวสังข์</h3>
+                <h4>ชื่อเล่นนัท</h4>
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  ไม่มีอะไรได้มาง่ายๆ ต้องขยันและอดทนเท่านั้น! 
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
