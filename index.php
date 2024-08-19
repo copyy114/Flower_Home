@@ -303,7 +303,7 @@
             <div class="swiper-slide">
               <div class="row event-item">
                 <div class="col-lg-6">
-                  <!-- <img src="assets/img/h.jpg" class="img-fluid" alt=""> -->
+                  <img src="assets/img/h.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>ช่อดอกไม้ สวยๆ</h3>

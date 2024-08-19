@@ -999,14 +999,15 @@ section {
 # Events
 --------------------------------------------------------------*/
 .events {
-  background: url(../img/events-bg.jpg) center center no-repeat;
+  /* background: url(../img/events-bg.jpg) center center no-repeat; */
   background-size: cover;
   position: relative;
 }
 
 .events::before {
   content: "";
-  background-color: rgba(12, 11, 10, 0.8);
+  /* background-color: rgba(12, 11, 10, 0.8); */
+  background-color:  #fff2f3;
   position: absolute;
   top: 0;
   right: 0;
@@ -1015,7 +1016,7 @@ section {
 }
 
 .events .section-title h2 {
-  color: #fff;
+  color: #000;
 }
 
 .events .container {
@@ -1034,7 +1035,7 @@ section {
 }
 
 .events .event-item {
-  color: #fff;
+  color: #000;
 }
 
 .events .event-item h3 {
