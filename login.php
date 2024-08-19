@@ -222,22 +222,22 @@ $conn->close();
     <div class="form-group">
             <div class="row">
                 <div class="col-9">
-                    <div class=""><label for="fname">ชื่อผู้ใช้:</label></div>
+                    <div class=""><label>ชื่อผู้ใช้:</label></div>
                 </div>    
                 <div class="col-3">
                     <div class="mb-2"><button ><a href="./register_user.php">ลงทะเบียน</a></button></div>
                 </div>
             </div>
-            <input type="text" id="username" name="username" required>
+            <input type="text" name="username" required>
         </div>
    
         <div class="form-group">
-            <label for="password">รหัสผ่าน:</label>
-            <input type="password" id="password" name="password" required>
+            <label>รหัสผ่าน:</label>
+            <input type="password"  name="password" required>
         </div>
         <div class="form-group">
-            <label for="user_type">ประเภทผู้ใช้:</label>
-            <select id="user_type" name="user_type" required>
+            <label>ประเภทผู้ใช้:</label>
+            <select  name="user_type" required>
                 <option value="customer">ลูกค้า</option>
                 <option value="owner">เจ้าของร้าน</option>
             </select>
