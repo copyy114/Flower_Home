@@ -106,9 +106,14 @@ $conn->close();
     <div class="col-sm-9">
         <select id="type_shop" name="type_shop" class="form-control" required>
             <option value="flower_25" <?php echo (htmlspecialchars($type_shop) == 'flower_25') ? 'selected' : ''; ?>>ดอกไม้ 25 บาท</option>
-            <option value="flower_50" <?php echo (htmlspecialchars($type_shop) == 'flower_50') ? 'selected' : ''; ?>>ดอกไม้ 50 บาท</option>
-            <option value="flower_100" <?php echo (htmlspecialchars($type_shop) == 'flower_100') ? 'selected' : ''; ?>>ดอกไม้ 100 บาท</option>
-            <option value="flower_luxury" <?php echo (htmlspecialchars($type_shop) == 'flower_luxury') ? 'selected' : ''; ?>>ดอกไม้หรูหรา</option>
+            <option value="expensive_flowers" <?php echo (htmlspecialchars($type_shop) == 'expensive_flowers') ? 'selected' : ''; ?>>ดอกไม้ราคาแพง</option>
+            <option value="bunch_of_flower" <?php echo (htmlspecialchars($type_shop) == 'bunch_of_flower') ? 'selected' : ''; ?>>ช่อดอกไม้</option>
+            <option value="flower_vase" <?php echo (htmlspecialchars($type_shop) == 'flower_vase') ? 'selected' : ''; ?>>แจกันดอกไม้</option>
+            <option value="flower_basket" <?php echo (htmlspecialchars($type_shop) == 'flower_basket') ? 'selected' : ''; ?>>กระเช้าดอกไม้</option>
+            <option value="bouquet_of_money" <?php echo (htmlspecialchars($type_shop) == 'bouquet_of_money') ? 'selected' : ''; ?>>ช่อเงิน</option>
+            <option value="price_of_flowers" <?php echo (htmlspecialchars($type_shop) == 'price_of_flowers') ? 'selected' : ''; ?>>ดอกไม้จับราคา</option>
+            <option value="flower_wrapping_pape" <?php echo (htmlspecialchars($type_shop) == 'flower_wrapping_pape') ? 'selected' : ''; ?>>กระด่าษห่อดอกไม้</option>
+            <option value="other_equipment" <?php echo (htmlspecialchars($type_shop) == 'other_equipment') ? 'selected' : ''; ?>>อุปกรณ์อื่นๆ</option>
         </select>
     </div>
 </div>

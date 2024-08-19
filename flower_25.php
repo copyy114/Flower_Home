@@ -80,7 +80,7 @@
                 echo '</div>';
             }
         } else {
-            echo '<p>No products found.</p>';
+            echo '<p>ไม่มีสินค้ามาแสดง.</p>';
         }
 
         // Close the connection

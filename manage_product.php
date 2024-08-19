@@ -52,9 +52,14 @@
                     <div class="col-sm-9">
                         <select name="type_shop" id="type_shop" class="form-control" required>
                             <option value="flower_25">ดอกไม้ 25 บาท</option>
-                            <option value="flower_50">ดอกไม้ 50 บาท</option>
-                            <option value="flower_100">ดอกไม้ 100 บาท</option>
-                            <option value="flower_luxury">ดอกไม้หรูหรา</option>
+                            <option value="expensive_flowers">ดอกไม้ราคาแพง</option>
+                            <option value="bunch_of_flower">ช่อดอกไม้</option>
+                            <option value="flower_vase">แจกันดอกไม้</option>
+                            <option value="flower_basket">กระเช้าดอกไม้</option>
+                            <option value="bouquet_of_money">ช่อเงิน</option>
+                            <option value="price_of_flowers">ดอกไม้จับราคา</option>
+                            <option value="flower_wrapping_pape">กระด่าษห่อดอกไม้</option>
+                            <option value="other_equipment">อุปกรณ์อื่นๆ</option>
                         </select>
                     </div>
                 </div>

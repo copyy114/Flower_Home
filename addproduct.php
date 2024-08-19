@@ -36,16 +36,16 @@ if (isset($_FILES['img_path']) && $_FILES['img_path']['error'] == UPLOAD_ERR_OK)
   $allowedfileExtensions = array('jpg', 'jpeg', 'png', 'gif');
   if (in_array($fileExtension, $allowedfileExtensions) && $fileSize < 5000000) { // 5MB limit
       if (move_uploaded_file($fileTmpPath, $dest_file_path)) {
-          echo 'File is successfully uploaded.<br>';
+          echo 'เพิ่มข้อมูลสินค้าสำเร็จ.<br>';
       } else {
-          echo 'Error occurred while moving the uploaded file.<br>';
+          echo 'เกิดข้อผิดพลาดขณะไฟล์ที่อัพโหลด.<br>';
       }
   } else {
-      echo 'Upload failed. Allowed file types: jpg, jpeg, png, gif. Max file size: 5MB.<br>';
+      echo 'อัพโหลดไม่ได้. ต้องไฟล์สกุลนี้เท่านั้น: jpg, jpeg, png, gif. นาดไฟที่อัพได้แค่: 5MB.<br>';
       $dest_file_path = ''; // Set to empty if file upload failed
   }
 } else {
-  echo 'No file uploaded or there was an upload error.<br>';
+  echo 'ไม่มีการอัพโหลดไฟล์หรือมีข้อผิดพลาดในการอัพโหลด.<br>';
   $dest_file_path = ''; // Set to empty if file upload failed
 }
 
@@ -72,7 +72,7 @@ $stmt->bind_param('ssssss', $name, $filePath, $description, $prev_price, $curren
 
 // ดำเนินการคำสั่ง
 if ($stmt->execute()) {
-  echo 'Data successfully inserted.';
+  // echo 'Data successfully inserted.';
   echo '<script>window.location.href = "manage_product.php";</script>';
 } else {
   echo 'Error inserting data: ' . $stmt->error;
