@@ -53,7 +53,7 @@
                         <select name="type_shop" id="type_shop" class="form-control" required>
                             <option value="flower_25">ดอกไม้ 25 บาท</option>
                             <option value="expensive_flowers">ดอกไม้ราคาแพง</option>
-                            <option value="bunch_of_flower">ช่อดอกไม้</option>
+                            <option value="bunch_of_flowers">ช่อดอกไม้</option>
                             <option value="flower_vase">แจกันดอกไม้</option>
                             <option value="flower_basket">กระเช้าดอกไม้</option>
                             <option value="bouquet_of_money">ช่อเงิน</option>
