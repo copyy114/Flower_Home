@@ -1753,4 +1753,21 @@ footer .social-media a:hover {
 center {
     color: #3227ff; 
 }
+.bg-admin{
+  background-color: rgb(248, 199, 221) ;
+  border-radius: 15px;
+  box-shadow: var(--bs-box-shadow) !important;
 
+}
+.border-left-primary {
+  border-left: .25rem solid #4e73df !important;
+}
+.border-left-success {
+  border-left: .25rem solid #1cc88a !important;
+}
+.border-left-info {
+  border-left: .25rem solid #36b9cc !important;
+}
+.border-left-warning {
+  border-left: .25rem solid #f6c23e !important;
+}
