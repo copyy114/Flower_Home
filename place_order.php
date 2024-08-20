@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("conn.php");
-
+ 
 // Function to save the order
 function placeOrder($conn, $orderData) {
     $stmt = $conn->prepare("INSERT INTO orders (name, email, address, phone, total_amount) VALUES (?, ?, ?, ?, ?)");

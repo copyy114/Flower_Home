@@ -11,6 +11,8 @@
     
     $conn->close();
     ?>
+
+    
 <section id="dashborad">
 <div class="container">
 <main class="main-content position-relative border-radius-lg ">
@@ -49,11 +51,6 @@
                     </h5>
                   </div>
                 </div>
-                <!-- <div class="col-4 text-end">
-                  <!-- <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                    <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
-                  </div>
-                </div> --> 
               </div>
             </div>
           </div>
@@ -116,61 +113,30 @@
                     <td class="w-30">
                       <div class="d-flex px-2 py-1 align-items-center">
                         <div>
-                          <!-- <img src="./assets/img/icons/flags/GB.png" alt="Country flag"> -->
+                          <img src="./assets/img/icons/flags/GB.png" alt="รูป">
                         </div>
                         <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0">ยังไม่แสดง</p>
-                          <!-- <h6 class="text-sm mb-0">Great Britain</h6> -->
+                          <p class="text-xs font-weight-bold mb-0">รายละเอียด</p>
+                          <h6 class="text-sm mb-0">ดอกไม่กุหลาบ</h6>
                         </div>
                       </div>
                     </td>
                     <td>
                       <div class="text-center">
-                        <!-- <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">1.400</h6> -->
+                        <p class="text-xs font-weight-bold mb-0">ราคา:</p>
+                        <h6 class="text-sm mb-0">1000</h6>
                       </div>
                     </td>
                     <td>
                       <div class="text-center">
-                        <!-- <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$190,700</h6> -->
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <!-- <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">23.44%</h6> -->
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          <!-- <img src="./assets/img/icons/flags/BR.png" alt="Country flag"> -->
-                        </div>
-                        <div class="ms-4">
-                          <!-- <p class="text-xs font-weight-bold mb-0">Country:</p>
-                          <h6 class="text-sm mb-0">Brasil</h6> -->
-                        </div>
+                        <p class="text-xs font-weight-bold mb-0">จำนวน:</p>
+                        <h6 class="text-sm mb-0">3 ชิ้น</h6>
                       </div>
                     </td>
                     <td>
                       <div class="text-center">
-                        <!-- <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">562</h6> -->
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <!-- <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$143,960</h6> -->
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <!-- <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">32.14%</h6> -->
+                        <p class="text-xs font-weight-bold mb-0">ผู้สั่งซื้อ:</p>
+                        <h6 class="text-sm mb-0">xxx</h6>
                       </div>
                     </td>
                   </tr>
