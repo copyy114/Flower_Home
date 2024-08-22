@@ -64,19 +64,9 @@ if ($result === FALSE) {
     <?php endif; ?>
     <form action="" method="post">
         <div class="form-group">
-        <div class="row">
-            <div class="col-9">
-                <div class=""><label for="fname">ชื่อ:</label> </div>
-            </div>
-            <div class="col-3">
-
-                <div class="mb-2"><button ><a href="logout.php">ย้อนกลับ</a></button></div>
-            </div>
-            </div>
-
+           <label for="fname">ชื่อ:</label>
             <input type="text" id="fname" name="fname" required>
         </div>
-
         <div class="form-group">
             <label for="username">ชื่อผู้ใช้:</label>
             <input type="text" id="username" name="username" required>
@@ -97,5 +87,13 @@ if ($result === FALSE) {
            
         </div>
     </form>
-   
+    <br>
+    <div class="row">
+    <div class="col-5"></div>
+        <div class="col-2 ">
+            <div class="mb-2"><button ><a href="logout.php">ย้อนกลับ</a></button></div>
+        </div>
+    <div class="col-5"></div>
+    </div>
+
     </div>

@@ -217,6 +217,13 @@ $conn->close();
 
 <div class="container container-edit-new">
     <h1>เข้าสู่ระบบ</h1>
+    <div class="row">
+    <div class="col-5"></div>
+        <div class="col-2 ">
+        <div class="mb-2"><button ><a href="./register_user.php">ลงทะเบียน</a></button></div>
+        </div>
+    <div class="col-5"></div>
+    </div>
     <?php if (isset($error)) { echo "<div class='message'>$error</div>"; } ?>
     <form method="POST" action="">
     <div class="form-group">
@@ -224,9 +231,9 @@ $conn->close();
                 <div class="col-9">
                     <div class=""><label>ชื่อผู้ใช้:</label></div>
                 </div>    
-                <div class="col-3">
+                <!-- <div class="col-3">
                     <div class="mb-2"><button ><a href="./register_user.php">ลงทะเบียน</a></button></div>
-                </div>
+                </div> -->
             </div>
             <input type="text" name="username" required>
         </div>
@@ -252,6 +259,8 @@ $conn->close();
         </div>
 
     </form>
+
+
 </div>
 
 </body>
