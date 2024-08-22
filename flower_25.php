@@ -9,7 +9,7 @@
   <section id="flower_25" >
     <div class="container">
       <div class="section-title">
-        <h2 style="font-family: Kanit, sans-serif;">ดอกไม้ช่อ</h2>
+        <h2 style="font-family: Kanit, sans-serif;">ดอกไม้ราคา 25</h2>
         <hr>
       </div>
 
