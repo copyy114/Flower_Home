@@ -51,7 +51,7 @@
                     <label for="type_shop" class="col-sm-3 control-label">ประเภทสินค้า</label>
                     <div class="col-sm-9">
                         <select name="type_shop" id="type_shop" class="form-control" required>
-                            <option value="flower_25">ดอกไม้ 25 บาท</option>
+                            <option value="flower_25">ดอกไม้ราคา 25</option>
                             <option value="expensive_flowers">ดอกไม้ราคาแพง</option>
                             <option value="bunch_of_flowers">ช่อดอกไม้</option>
                             <option value="flower_vase">แจกันดอกไม้</option>

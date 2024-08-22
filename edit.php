@@ -105,7 +105,7 @@ $conn->close();
     <label for="type_shop" class="col-sm-3 col-form-label">ประเภท:</label>
     <div class="col-sm-9">
         <select id="type_shop" name="type_shop" class="form-control" required>
-            <option value="flower_25" <?php echo (htmlspecialchars($type_shop) == 'flower_25') ? 'selected' : ''; ?>>ดอกไม้ 25 บาท</option>
+            <option value="flower_25" <?php echo (htmlspecialchars($type_shop) == 'flower_25') ? 'selected' : ''; ?>>ดอกไม้ราคา 25</option>
             <option value="expensive_flowers" <?php echo (htmlspecialchars($type_shop) == 'expensive_flowers') ? 'selected' : ''; ?>>ดอกไม้ราคาแพง</option>
             <option value="bunch_of_flowers" <?php echo (htmlspecialchars($type_shop) == 'bunch_of_flowers') ? 'selected' : ''; ?>>ช่อดอกไม้</option>
             <option value="flower_vase" <?php echo (htmlspecialchars($type_shop) == 'flower_vase') ? 'selected' : ''; ?>>แจกันดอกไม้</option>
