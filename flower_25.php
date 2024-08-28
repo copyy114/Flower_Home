@@ -9,15 +9,17 @@
       <div class="section-title">
         <h2 style="font-family: Kanit, sans-serif;">ดอกไม้ราคา 25</h2>
         <hr>
-        
-        <!-- Search Form -->
+
+      </div>
+
         <form method="get" action="">
           <div class="input-group mb-3">
             <input type="text" name="search" class="form-control" placeholder="ค้นหาสินค้า" value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
             <button class="btn btn-primary" type="submit">ค้นหา</button>
           </div>
         </form>
-      </div>
+
+    <!-- Search Form -->
 
       <div class="row">
       <?php
