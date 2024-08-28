@@ -31,6 +31,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style-admin.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Delicious
@@ -81,105 +82,8 @@
       <!-- <a href="#book-a-table" class="book-a-table-btn scrollto">Book a table</a> -->
 
     </div>
-    <style>
-      .container-edit-new{
-            margin-top: 5% ;
+   
 
-      }
-      .container {
-            /* margin-top: 5% ; */
-            padding: 20px;
-            border-radius: 20px;
-        }
-        .container-edit{
-            /* margin-top: 10% ; */
-            background-color:#ffdee0 ;
-            padding: 20px;
-            border-radius: 20px;
-        }
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        background-color: white;
-    }
-    th, td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-    }
-    th {
-        background-color: #f4f4f4;
-    }
-    img {
-        max-width: 100px; /* ปรับขนาดรูปภาพให้เหมาะสม */
-        height: auto;
-    }
-
-        
-        body {
-  font-family: "Kanit", sans-serif !important;
-            margin: 20px;
-        }
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        input[type="text"], input[type="password"], select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            background-color: #007bff;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        input[type="reset"] {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            background-color: #ff2d00;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-        input[type="reset"]:hover {
-            background-color: #cf2500;
-        }
-        .form-group {
-            margin-bottom: 12px;
-        }
-        .message {
-            color: red;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-    </style>
 
   </header><!-- End Header -->
 

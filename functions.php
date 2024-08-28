@@ -1,27 +1,56 @@
 <?php
-    function displayProducts($conn, $type_shops) {
-        // Convert the array to a string of placeholders for the SQL query
-        $placeholders = implode(',', array_fill(0, count($type_shops), '?'));
-        
-        // Define the SQL query to fetch records based on multiple type_shop values
-        $sql = "SELECT id, name, description, prev_price, current_price, img_path FROM tbproduct WHERE type_shop IN ($placeholders)";
-        
-        // Prepare the statement
-        $stmt = $conn->prepare($sql);
-        
-        // Bind parameters dynamically based on the number of type_shop values
-        $types = str_repeat('s', count($type_shops)); // String of 's' for each type_shop
-        $stmt->bind_param($types, ...$type_shops);
+function displayProducts($conn, $type_shops, $currentPage = 1, $itemsPerPage = 3, $search = '') {
+    // Convert the array to a string of placeholders for the SQL query
+    $placeholders = implode(',', array_fill(0, count($type_shops), '?'));
 
-        // Execute the query
-        $stmt->execute();
-        $result = $stmt->get_result();
+    // Step 1: Count total items for pagination with search
+    $countSql = "SELECT COUNT(*) AS totalItems FROM tbproduct WHERE type_shop IN ($placeholders)";
+    if (!empty($search)) {
+        $countSql .= " AND name LIKE ?";
+    }
+    
+    $countStmt = $conn->prepare($countSql);
+    $types = str_repeat('s', count($type_shops)); 
+    $params = $type_shops;
 
-        // Check if there are any results
-        if ($result && $result->num_rows > 0) {
-            // Fetch and display each row of data
-            while ($row = $result->fetch_assoc()) {
-                $id = htmlspecialchars($row["id"]);
+    if (!empty($search)) {
+        $types .= 's';
+        $params[] = '%' . $search . '%';
+    }
+    
+    $countStmt->bind_param($types, ...$params);
+    $countStmt->execute();
+    $countResult = $countStmt->get_result();
+    $totalItems = $countResult->fetch_assoc()['totalItems'];
+
+    // Calculate the total number of pages
+    $totalPages = ceil($totalItems / $itemsPerPage);
+
+    // Calculate the OFFSET value
+    $offset = ($currentPage - 1) * $itemsPerPage;
+
+    // Step 2: Fetch data with LIMIT, OFFSET, and search
+    $sql = "SELECT id, name, description, prev_price, current_price, img_path 
+            FROM tbproduct 
+            WHERE type_shop IN ($placeholders)";
+    
+    if (!empty($search)) {
+        $sql .= " AND name LIKE ?";
+    }
+
+    $sql .= " LIMIT ? OFFSET ?";
+    
+    $stmt = $conn->prepare($sql);
+    $typesWithLimitOffset = $types . 'ii';
+    $paramsWithLimitOffset = array_merge($params, [$itemsPerPage, $offset]);
+    $stmt->bind_param($typesWithLimitOffset, ...$paramsWithLimitOffset);
+
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result && $result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $id = htmlspecialchars($row["id"]);
                 $fileName = htmlspecialchars($row["img_path"]);
                 $filePath = 'uploaded_files/' . $fileName;
                 $name = htmlspecialchars($row["name"]);
@@ -77,13 +106,59 @@
                 echo '        </div>';
                 echo '    </div>';
                 echo '</div>';
-            }
-        } else {
-            echo '<p>ไม่มีสินค้ามาแสดง.</p>';
         }
-
-        $stmt->close();
+    } else {
+        echo '<p>ไม่มีสินค้ามาแสดง.</p>';
     }
+
+    // Step 3: Display pagination controls with limited page numbers
+    echo '<nav aria-label="Page navigation">';
+    echo '<ul class="pagination justify-content-center">';
+
+    // "ไปหน้าแรกสุด" button
+    if ($currentPage > 1) {
+        echo '<li class="page-item"><a class="page-link" href="?page=1&search=' . urlencode($search) . '">ไปหน้าแรกสุด</a></li>';
+    }
+
+    // Previous page button
+    if ($currentPage > 1) {
+        echo '<li class="page-item"><a class="page-link" href="?page=' . ($currentPage - 1) . '&search=' . urlencode($search) . '">ก่อนหน้า</a></li>';
+    }
+
+    // Determine the start and end page numbers to display
+    $startPage = max(1, $currentPage - 1);
+    $endPage = min($startPage + 2, $totalPages);
+
+    // Adjust start page if at the end
+    if ($endPage - $startPage < 2) {
+        $startPage = max(1, $endPage - 2);
+    }
+
+    // Page number buttons
+    for ($i = $startPage; $i <= $endPage; $i++) {
+        if ($i == $currentPage) {
+            echo '<li class="page-item active"><a class="page-link" href="?page=' . $i . '&search=' . urlencode($search) . '">' . $i . '</a></li>';
+        } else {
+            echo '<li class="page-item"><a class="page-link" href="?page=' . $i . '&search=' . urlencode($search) . '">' . $i . '</a></li>';
+        }
+    }
+
+    // Next page button
+    if ($currentPage < $totalPages) {
+        echo '<li class="page-item"><a class="page-link" href="?page=' . ($currentPage + 1) . '&search=' . urlencode($search) . '">ถัดไป</a></li>';
+    }
+
+    // "ไปหน้าท้ายสุด" button
+    if ($currentPage < $totalPages) {
+        echo '<li class="page-item"><a class="page-link" href="?page=' . $totalPages . '&search=' . urlencode($search) . '">ไปหน้าท้ายสุด</a></li>';
+    }
+
+    echo '</ul>';
+    echo '</nav>';
+
+    $stmt->close();
+    $countStmt->close();
+}
 
     // ส่วนข้อหน้า Dashborad
     function getTotalQuantity($conn) {
@@ -133,5 +208,122 @@
                 return 0;
         }
         }
-    
+        function getSearchTerm() {
+            return isset($_POST['search']) ? $_POST['search'] : '';
+        }
+        
+        function getPageNumber() {
+            return isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        }
+        
+        function getTotalItems($conn, $search) {
+            $sql_count = "SELECT COUNT(*) as total FROM tbproduct";
+            if ($search !== '') {
+                $sql_count .= " WHERE type_shop LIKE ?";
+            }
+            $stmt_count = $conn->prepare($sql_count);
+            if ($search !== '') {
+                $search_param = "%$search%";
+                $stmt_count->bind_param("s", $search_param);
+            }
+            $stmt_count->execute();
+            $result_count = $stmt_count->get_result();
+            $row_count = $result_count->fetch_assoc();
+            return $row_count['total'];
+        }
+        
+        function getProducts($conn, $search, $items_per_page, $offset) {
+            $sql = "SELECT id, name, description, prev_price, current_price, img_path, type_shop, date_created, date_updated FROM tbproduct";
+            
+            if ($search !== '') {
+                $sql .= " WHERE type_shop LIKE ?";
+                $sql .= " LIMIT ? OFFSET ?";
+                $search_param = "%$search%";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("sii", $search_param, $items_per_page, $offset);
+            } else {
+                $sql .= " LIMIT ? OFFSET ?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("ii", $items_per_page, $offset);
+            }
+            
+            $stmt->execute();
+            return $stmt->get_result();
+        }
+        
+        function renderProductTable($result) {
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["name"] . "</td>";
+                    echo "<td><img src='uploaded_files/" . $row["img_path"] . "' alt='Product Image'></td>";
+                    echo "<td>" . $row["description"] . "</td>";
+                    echo "<td>" . $row["prev_price"] . "</td>";
+                    echo "<td>" . $row["current_price"] . "</td>";
+                    echo "<td>" . $row["type_shop"] . "</td>";
+                    echo "<td>
+                            <a href='edit.php?id=" . $row["id"] . "'><i class='fas fa-edit' style='font-size:20px;color:blue'></i></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                            <a href='delete.php?id=" . $row["id"] . "' onclick=\"return confirm('คุณแน่ใจว่าต้องการลบผู้ใช้รายนี้?');\"><i class='fas fa-times-circle' style='font-size:20px;color:red'></i></a>
+                        </td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='7'>No records found</td></tr>";
+            }
+        }
+        
+        function renderPagination($page, $total_pages, $search) {
+            echo '<div class="pagination">';
+        
+            // ปุ่มไปหน้าแรกสุด
+            if ($page > 1) {
+                echo '<a href="?page=1' . ($search ? '&search=' . urlencode($search) : '') . '">หน้าแรกสุด</a>';
+            } else {
+                echo '<span class="disabled">หน้าแรกสุด</span>';
+            }
+        
+            // ปุ่มย้อนกลับ
+            if ($page > 1) {
+                echo '<a href="?page=' . ($page - 1) . ($search ? '&search=' . urlencode($search) : '') . '">&laquo; ย้อนกลับ</a>';
+            } else {
+                echo '<span class="disabled">&laquo; ย้อนกลับ</span>';
+            }
+        
+            // การกำหนดช่วงหน้า
+            $start = max(1, $page - 1); // เริ่มต้นจากหน้าปัจจุบันลบ 1
+            $end = min($total_pages, $start + 2); // สิ้นสุดที่หน้าเริ่มต้นบวก 2 (รวมเป็น 3 หน้า)
+        
+            for ($i = $start; $i <= $end; $i++) {
+                if ($i == $page) {
+                    echo '<span class="active">' . $i . '</span>';
+                } else {
+                    echo '<a href="?page=' . $i . ($search ? '&search=' . urlencode($search) : '') . '">' . $i . '</a>';
+                }
+            }
+        
+            // ปุ่มถัดไป
+            if ($page < $total_pages) {
+                echo '<a href="?page=' . ($page + 1) . ($search ? '&search=' . urlencode($search) : '') . '">ถัดไป &raquo;</a>';
+            } else {
+                echo '<span class="disabled">ถัดไป &raquo;</span>';
+            }
+        
+            // ปุ่มไปหน้าท้ายสุด
+            if ($page < $total_pages) {
+                echo '<a href="?page=' . $total_pages . ($search ? '&search=' . urlencode($search) : '') . '">หน้าท้ายสุด</a>';
+            } else {
+                echo '<span class="disabled">หน้าท้ายสุด</span>';
+            }
+        
+            echo '</div>';
+        }
+        // จำนวนรายการต่อหน้า
+        $items_per_page = 3;
+        $search = getSearchTerm();
+        $page = getPageNumber();
+        $offset = ($page - 1) * $items_per_page;
+        $total_items = getTotalItems($conn, $search);
+        $total_pages = ceil($total_items / $items_per_page);
+        $result = getProducts($conn, $search, $items_per_page, $offset);
+     
 ?>
