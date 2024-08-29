@@ -71,7 +71,6 @@
         <ul>
           <li><a class="nav-link scrollto active" href="index.php" href="#hero">หน้าแรก</a></li>
           <li><a class="nav-link scrollto" href="#about">สินค้าขายดี</a></li>
-          <li><a class="nav-link scrollto" href="#menu">ธีมมาแรง</a></li>
           <li><a class="nav-link scrollto" href="#chefs">สมาชิก</a></li>
 
           <!-- <li><a class="nav-link scrollto" href="#gallery">แกลอรี่</a></li> -->
