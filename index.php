@@ -57,7 +57,7 @@
 
           <div class="col-lg-4">
             <div class="box">
-              <h4>สิ้นค้าแนะนำที่ 1</h4>
+              <h4>สินค้าแนะนำที่ 1</h4>
               <p>....</p>
               <p class="fa fa-star "></p>
               <p class="fa fa-star"></p>
@@ -69,7 +69,7 @@
 
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="box">
-              <h4>สิ้นค้าแนะนำที่ 2</h4>
+              <h4>สินค้าแนะนำที่ 2</h4>
               <p>....</p>
               <p class="fa fa-star"></p>
               <p class="fa fa-star"></p>
@@ -81,7 +81,7 @@
 
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="box">
-              <h4>สิ้นค้าแนะนำที่ 3</h4>
+              <h4>สินค้าแนะนำที่ 3</h4>
               <p>....</p>
               <p class="fa fa-star "></p>
               <p class="fa fa-star"></p>
