@@ -160,6 +160,9 @@ function displayProducts($conn, $type_shops, $currentPage = 1, $itemsPerPage = 3
     $countStmt->close();
 }
 
+
+// -------- ส่วนของ Product ------
+                                         
     // ส่วนข้อหน้า Dashborad
     function getTotalQuantity($conn) {
         $sql = "SELECT SUM(quantity) AS total_quantity FROM order_items";

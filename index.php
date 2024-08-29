@@ -49,33 +49,45 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>รอ <span>ปรับปรุง จะดึงรูปจาก ดอกไม้ 25 บาท มา</span></h2>
-          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+          <h2>สินค้าขายดี</h2>
+          <p>ทางร้านเราขอแนะนำลูกค้า สำหรับสินค้าที่เป็นที่นิยอมของทางร้าน..</p>
         </div>
-
+ 
         <div class="row">
 
           <div class="col-lg-4">
             <div class="box">
-              <span>01</span>
-              <h4>Lorem ทดสอบ</h4>
-              <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+              <h4>สิ้นค้าแนะนำที่ 1</h4>
+              <p>....</p>
+              <p class="fa fa-star "></p>
+              <p class="fa fa-star"></p>
+              <p class="fa fa-star"></p>
+              <p class="fa fa-star"></p>
+              <p class="fa fa-star"></p>
             </div>
           </div>
 
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="box">
-              <span>02</span>
-              <h4>Repellat Nihil</h4>
-              <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
+              <h4>สิ้นค้าแนะนำที่ 2</h4>
+              <p>....</p>
+              <p class="fa fa-star"></p>
+              <p class="fa fa-star"></p>
+              <p class="fa fa-star"></p>
+              <p class="fa fa-star"></p>
+              <p class="fa fa-star"></p>
             </div>
           </div>
 
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="box">
-              <span>03</span>
-              <h4> Ad ad velit qui</h4>
-              <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
+              <h4>สิ้นค้าแนะนำที่ 3</h4>
+              <p>....</p>
+              <p class="fa fa-star "></p>
+              <p class="fa fa-star"></p>
+              <p class="fa fa-star"></p>
+              <p class="fa fa-star"></p>
+              <p class="fa fa-star"></p>
             </div>
           </div>
 
