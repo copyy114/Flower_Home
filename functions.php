@@ -325,5 +325,4 @@ function displayProducts($conn, $type_shops, $currentPage = 1, $itemsPerPage = 3
         $total_items = getTotalItems($conn, $search);
         $total_pages = ceil($total_items / $items_per_page);
         $result = getProducts($conn, $search, $items_per_page, $offset);
-     
 ?>
