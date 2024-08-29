@@ -36,7 +36,7 @@
         $type_shops = ['flower_25'];
 
         // เรียกฟังก์ชันแสดงสินค้า
-        displayProducts($conn, $type_shops, $currentPage, 3, $search);
+        displayProducts($conn, $type_shops, $currentPage, 6, $search);
 
         $conn->close();
       ?>
