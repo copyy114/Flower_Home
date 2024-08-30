@@ -109,6 +109,7 @@ $type_shop_map = getTypeShopMap(); // เรียกใช้ฟังก์ช
                 <th>สินค้าแนะนำ</th>
             </tr>
             <?php
+            error_reporting(0);
             echo $Recommended_message;
             if ($result->num_rows > 0) {
                 echo "<form method='POST' action='is_Recommend.php'>";
