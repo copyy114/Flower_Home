@@ -82,67 +82,83 @@
         <hr>
         <!-- table edit,delete,view -->
         <?php
-            include('conn.php');
-            include("functions.php");
+            include('conn.php'); // การเชื่อมต่อฐานข้อมูล
+            include('functions.php'); // ฟังก์ชันที่เกี่ยวข้อง
 
-            // เรียกใช้ฟังก์ชันเพื่อกำหนดจำนวนรายการต่อหน้า
+            // กำหนดจำนวนรายการต่อหน้า
             $items_per_page = 3;
 
-            // เรียกใช้ฟังก์ชันเพื่อดึงค่าการค้นหา
-            $search = getSearchTerm();
+            // ดึงค่าการค้นหาจาก GET หรือ POST
+            $search = isset($_POST['search']) ? $_POST['search'] : (isset($_GET['search']) ? $_GET['search'] : '');
 
-            // เรียกใช้ฟังก์ชันเพื่อดึงหมายเลขหน้าปัจจุบัน
+            // ดึงหมายเลขหน้าปัจจุบันจาก GET
             $page = getPageNumber();
 
             // คำนวณค่า offset จากหน้าปัจจุบัน
             $offset = ($page - 1) * $items_per_page;
 
-            // เรียกใช้ฟังก์ชันเพื่อดึงจำนวนรายการทั้งหมด
+            // ดึงจำนวนรายการทั้งหมด
             $total_items = getTotalItems($conn, $search);
 
             // คำนวณจำนวนหน้าทั้งหมด
             $total_pages = ceil($total_items / $items_per_page);
 
-            // เรียกใช้ฟังก์ชันเพื่อดึงข้อมูลสินค้า
+            // ดึงข้อมูลสินค้าตามค่าค้นหาและหน้าปัจจุบัน
             $result = getProducts($conn, $search, $items_per_page, $offset);
-
             ?>
 
-            <h2>รายการสินค้า</h2>
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title>Manage Products</title>
+                <!-- รวม CSS ที่ใช้ -->
+            </head>
+            <body>
+                <h2>รายการสินค้า</h2>
 
-            <!-- ฟอร์มค้นหา -->
-            <form action="manage_product.php" method="POST">
-                <label for="search">ค้นหา ประเภทสินค้า :</label>
-                <input type="text" id="search" name="search" value="<?php echo htmlspecialchars($search); ?>">
-                <div class="row">
-                    <div class="col-12">
-                        <input type="submit" value="ค้นหา">
+                <!-- ฟอร์มค้นหา -->
+                <form action="manage_product.php" method="POST">
+                    <label for="search">ค้นหา ประเภทสินค้า :</label>
+                        <select name="search" id="search" class="form-control" required>
+                            <option value="">เลือกข้อมูลค้นหา...</option>
+                            <option value="flower_25" <?php if ($search == 'flower_25') echo 'selected'; ?>>ดอกไม้ราคา 25</option>
+                            <option value="expensive_flowers" <?php if ($search == 'expensive_flowers') echo 'selected'; ?>>ดอกไม้ราคาแพง</option>
+                            <option value="bunch_of_flowers" <?php if ($search == 'bunch_of_flowers') echo 'selected'; ?>>ช่อดอกไม้</option>
+                            <option value="flower_vase" <?php if ($search == 'flower_vase') echo 'selected'; ?>>แจกันดอกไม้</option>
+                            <option value="flower_basket" <?php if ($search == 'flower_basket') echo 'selected'; ?>>กระเช้าดอกไม้</option>
+                            <option value="bouquet_of_money" <?php if ($search == 'bouquet_of_money') echo 'selected'; ?>>ช่อเงิน</option>
+                            <option value="price_of_flowers" <?php if ($search == 'price_of_flowers') echo 'selected'; ?>>ดอกไม้จับราคา</option>
+                            <option value="flower_wrapping_pape" <?php if ($search == 'flower_wrapping_pape') echo 'selected'; ?>>กระดาษห่อดอกไม้</option>
+                            <option value="other_equipment" <?php if ($search == 'other_equipment') echo 'selected'; ?>>อุปกรณ์อื่นๆ</option>
+                        </select>
+                    <div class="row">
+                        <div class="col-12">
+                            <input type="submit" value="ค้นหา">
+                        </div> 
                     </div>
-                </div>
-            </form>
-            <br>
-            <table>
-                <tr>
-                    <th>ชื่อสินค้า</th>
-                    <th>รูปภาพ</th>
-                    <th>รายละเอียด</th>
-                    <th>ราคาเดิม</th>
-                    <th>ราคาโปรโมชั่น</th>
-                    <th>ประเภทสินค้า</th>
-                    <th>Actions</th>
-                </tr>
-                <?php renderProductTable($result); ?>
-            </table>
+                </form>
+                <br>
+                <table>
+                    <tr>
+                        <th>ชื่อสินค้า</th>
+                        <th>รูปภาพ</th>
+                        <th>รายละเอียด</th>
+                        <th>ราคาเดิม</th>
+                        <th>ราคาโปรโมชั่น</th>
+                        <th>ประเภทสินค้า</th>
+                        <th>Actions</th>
+                    </tr>
+                    <?php renderProductTable($result); ?>
+                </table>
 
-            <!-- Pagination -->
-            <?php renderPagination($page, $total_pages, $search); ?>
+                <!-- Pagination -->
+                <?php renderPagination($page, $total_pages, $search); ?>
 
-            <?php
-            // ปิดการเชื่อมต่อฐานข้อมูล
-            $conn->close();
-            ?>
-
-
+                <?php
+                // ปิดการเชื่อมต่อฐานข้อมูล
+                $conn->close();
+                ?>
         </div>
     </section>
 

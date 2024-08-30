@@ -260,7 +260,37 @@ function displayProducts($conn, $type_shops, $currentPage = 1, $itemsPerPage = 3
                     echo "<td>" . $row["description"] . "</td>";
                     echo "<td>" . $row["prev_price"] . "</td>";
                     echo "<td>" . $row["current_price"] . "</td>";
-                    echo "<td>" . $row["type_shop"] . "</td>";
+                    
+                    // เพิ่มเงื่อนไขที่นี่
+                    if ($row["type_shop"] == 'flower_25') {
+                        echo "<td>ดอกไม้ราคา 25</td>";
+                    } 
+                    elseif ($row["type_shop"] == 'expensive_flowers') {
+                        echo "<td>ดอกไม้ราคาแพง</td>";
+                    }
+                    elseif ($row["type_shop"] == 'bunch_of_flowers') {
+                        echo "<td>ช่อดอกไม้</td>";
+                    }
+                    elseif ($row["type_shop"] == 'flower_vase') {
+                        echo "<td>แจกันดอกไม้</td>";
+                    }
+                    elseif ($row["type_shop"] == 'flower_basket') {
+                        echo "<td>กระเช้าดอกไม้</td>";
+                    }
+                    elseif ($row["type_shop"] == 'bouquet_of_money') {
+                        echo "<td>ช่อเงิน</td>";
+                    }
+                    elseif ($row["type_shop"] == 'price_of_flowers') {
+                        echo "<td>ดอกไม้จับราคา</td>";
+                    }
+                    elseif ($row["type_shop"] == 'flower_wrapping_pape') {
+                        echo "<td>กระด่าษห่อดอกไม้</td>";
+                    }
+                    elseif ($row["type_shop"] == 'other_equipment') {
+                        echo "<td>อุปกรณ์อื่นๆ</td>";
+                    }
+                
+                    
                     echo "<td>
                             <a href='edit.php?id=" . $row["id"] . "'><i class='fas fa-edit' style='font-size:20px;color:blue'></i></a>&nbsp;&nbsp;|&nbsp;&nbsp;
                             <a href='delete.php?id=" . $row["id"] . "' onclick=\"return confirm('คุณแน่ใจว่าต้องการลบผู้ใช้รายนี้?');\"><i class='fas fa-times-circle' style='font-size:20px;color:red'></i></a>
@@ -268,9 +298,10 @@ function displayProducts($conn, $type_shops, $currentPage = 1, $itemsPerPage = 3
                     echo "</tr>";
                 }
             } else {
-                echo "<tr><td colspan='7'>No records found</td></tr>";
+                echo "<tr><td colspan='7'>ไม่มีสินค้า...</td></tr>";
             }
         }
+        
         
         function renderPagination($page, $total_pages, $search) {
             echo '<div class="pagination">';
