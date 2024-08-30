@@ -260,7 +260,7 @@
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
               <a href="assets/img/gallery/gallery-7.jpg" class="gallery-lightbox">
-                <img src="assets/img/ก8.jpg" alt="" class="img-fluid">
+                <img src="assets/img/ก7.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
@@ -268,7 +268,7 @@
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
               <a href="assets/img/gallery/gallery-8.jpg" class="gallery-lightbox">
-                <img src="assets/img/h.jpg" alt="" class="img-fluid">
+                <img src="assets/img/ก9.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
