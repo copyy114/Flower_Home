@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `tbproduct`
 --
+ALTER TABLE tbproduct ADD COLUMN is_recommended BOOLEAN DEFAULT FALSE;
 
 CREATE TABLE `tbproduct` (
   `id` int(11) NOT NULL,

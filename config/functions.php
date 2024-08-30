@@ -356,4 +356,20 @@ function displayProducts($conn, $type_shops, $currentPage = 1, $itemsPerPage = 3
         $total_items = getTotalItems($conn, $search);
         $total_pages = ceil($total_items / $items_per_page);
         $result = getProducts($conn, $search, $items_per_page, $offset);
+
+
+        function getTypeShopMap() {
+            // สร้าง array ที่เก็บการแมปประเภทสินค้า
+            return array(
+                'flower_25' => 'ดอกไม้ราคา 25',
+                'expensive_flowers' => 'ดอกไม้ราคาแพง',
+                'bunch_of_flowers' => 'ช่อดอกไม้',
+                'flower_vase' => 'แจกันดอกไม้',
+                'flower_basket' => 'กระเช้าดอกไม้',
+                'bouquet_of_money' => 'ช่อเงิน',
+                'price_of_flowers' => 'ดอกไม้จับราคา',
+                'flower_wrapping_pape' => 'กระด่าษห่อดอกไม้',
+                'other_equipment' => 'อุปกรณ์อื่นๆ'
+            );
+        }
 ?>

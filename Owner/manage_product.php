@@ -1,6 +1,7 @@
 <?php 
     include('..\Owner\config\header-owner.php'); 
     include('..\data\conn.php'); // รวมไฟล์เชื่อมต่อฐานข้อมูล
+    
 ?>
 
 <section id="product">
@@ -115,6 +116,7 @@
 
             // ดึงข้อมูลสินค้าตามค่าค้นหาและหน้าปัจจุบัน
             $result = getProducts($conn, $search, $items_per_page, $offset);
+            
             ?>
         <h2>รายการสินค้า</h2>
 
@@ -143,7 +145,7 @@
                     <option value="other_equipment" <?php if ($search=='other_equipment' ) echo 'selected' ; ?>
                         >อุปกรณ์อื่นๆ</option>
                 </select>
-
+ 
             <div class="row">
                 <div class="col-9">
                     <input type="submit" value="ค้นหา">

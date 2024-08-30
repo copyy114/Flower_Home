@@ -1,5 +1,7 @@
-<?php include('header-admin.php'); 
-    include ('conn.php');
+<?php 
+    include('..\Owner\config\header-owner.php'); 
+    include('..\data\conn.php'); // รวมไฟล์เชื่อมต่อฐานข้อมูล
+    
 
 
 // ตรวจสอบการเชื่อมต่อ
@@ -135,4 +137,4 @@ $conn->close();
 
 </div>
 
-<?php include('footer.html'); ?> 
+<?php include('..\footer.html'); ?> 

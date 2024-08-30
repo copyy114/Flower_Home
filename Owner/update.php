@@ -1,5 +1,5 @@
 <?php
-include('conn.php');
+    include('..\data\conn.php'); // รวมไฟล์เชื่อมต่อฐานข้อมูล
 // ตรวจสอบการเชื่อมต่อ
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

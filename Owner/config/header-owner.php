@@ -70,6 +70,7 @@
           <li class="dropdown"><a href="#"><span>ตั้งค่า</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="./manage_product.php">จัดการ สินค้า</a></li>
+              <li><a href="./is_Recommend.php">จัดการ สินค้าแนะนำ</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="..\logout.php">ออกจากระบบ</a></li>
