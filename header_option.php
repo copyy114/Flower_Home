@@ -98,7 +98,7 @@
           <li><a class="nav-link scrollto" href="#events">โปรโมชั่น</a></li>
           <li><a class="nav-link scrollto" href="#gallery">แกลอรี่</a></li>
           <li><a class="nav-link scrollto" href="#contact">ติดต่อ</a></li>
-          <li class="dropdown"><a href="#"><span>ตั้งค้าผู้ใช้</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span>ตั้งค่าผู้ใช้</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li>
                 <style>

@@ -88,8 +88,16 @@
             // กำหนดจำนวนรายการต่อหน้า
             $items_per_page = 3;
 
-            // ดึงค่าการค้นหาจาก GET หรือ POST
-            $search = isset($_POST['search']) ? $_POST['search'] : (isset($_GET['search']) ? $_GET['search'] : '');
+            // ตรวจสอบการคลิกปุ่ม "ยกเลิก" เพื่อรีเซ็ตค่าการค้นหา
+            if (isset($_POST['reset'])) {
+                // รีเซ็ตค่าการค้นหา
+                $search = '';
+                // แสดงหน้าจอใหม่หลังจากรีเซ็ต
+                $_GET['search'] = $search;
+            } else {
+                // ดึงค่าการค้นหาจาก POST หรือ GET
+                $search = isset($_POST['search']) ? $_POST['search'] : (isset($_GET['search']) ? $_GET['search'] : '');
+            }
 
             // ดึงหมายเลขหน้าปัจจุบันจาก GET
             $page = getPageNumber();
@@ -106,60 +114,67 @@
             // ดึงข้อมูลสินค้าตามค่าค้นหาและหน้าปัจจุบัน
             $result = getProducts($conn, $search, $items_per_page, $offset);
             ?>
+        <h2>รายการสินค้า</h2>
 
-            <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <title>Manage Products</title>
-                <!-- รวม CSS ที่ใช้ -->
-            </head>
-            <body>
-                <h2>รายการสินค้า</h2>
+        <!-- ฟอร์มค้นหา -->
+        <form action="manage_product.php" method="POST">
+            <label for="search">ค้นหา ประเภทสินค้า :</label>
 
-                <!-- ฟอร์มค้นหา -->
-                <form action="manage_product.php" method="POST">
-                    <label for="search">ค้นหา ประเภทสินค้า :</label>
-                        <select name="search" id="search" class="form-control" required>
-                            <option value="">เลือกข้อมูลค้นหา...</option>
-                            <option value="flower_25" <?php if ($search == 'flower_25') echo 'selected'; ?>>ดอกไม้ราคา 25</option>
-                            <option value="expensive_flowers" <?php if ($search == 'expensive_flowers') echo 'selected'; ?>>ดอกไม้ราคาแพง</option>
-                            <option value="bunch_of_flowers" <?php if ($search == 'bunch_of_flowers') echo 'selected'; ?>>ช่อดอกไม้</option>
-                            <option value="flower_vase" <?php if ($search == 'flower_vase') echo 'selected'; ?>>แจกันดอกไม้</option>
-                            <option value="flower_basket" <?php if ($search == 'flower_basket') echo 'selected'; ?>>กระเช้าดอกไม้</option>
-                            <option value="bouquet_of_money" <?php if ($search == 'bouquet_of_money') echo 'selected'; ?>>ช่อเงิน</option>
-                            <option value="price_of_flowers" <?php if ($search == 'price_of_flowers') echo 'selected'; ?>>ดอกไม้จับราคา</option>
-                            <option value="flower_wrapping_pape" <?php if ($search == 'flower_wrapping_pape') echo 'selected'; ?>>กระดาษห่อดอกไม้</option>
-                            <option value="other_equipment" <?php if ($search == 'other_equipment') echo 'selected'; ?>>อุปกรณ์อื่นๆ</option>
-                        </select>
-                    <div class="row">
-                        <div class="col-12">
-                            <input type="submit" value="ค้นหา">
-                        </div> 
-                    </div>
-                </form>
-                <br>
-                <table>
-                    <tr>
-                        <th>ชื่อสินค้า</th>
-                        <th>รูปภาพ</th>
-                        <th>รายละเอียด</th>
-                        <th>ราคาเดิม</th>
-                        <th>ราคาโปรโมชั่น</th>
-                        <th>ประเภทสินค้า</th>
-                        <th>Actions</th>
-                    </tr>
-                    <?php renderProductTable($result); ?>
-                </table>
+                <select name="search" id="search" class="form-control">
+                    <option value="">เลือกข้อมูลค้นหา...</option>
+                    <option value="flower_25" <?php if ($search=='flower_25' ) echo 'selected' ; ?>>ดอกไม้ราคา 25
+                    </option>
+                    <option value="expensive_flowers" <?php if ($search=='expensive_flowers' ) echo 'selected' ; ?>
+                        >ดอกไม้ราคาแพง</option>
+                    <option value="bunch_of_flowers" <?php if ($search=='bunch_of_flowers' ) echo 'selected' ; ?>
+                        >ช่อดอกไม้</option>
+                    <option value="flower_vase" <?php if ($search=='flower_vase' ) echo 'selected' ; ?>>แจกันดอกไม้
+                    </option>
+                    <option value="flower_basket" <?php if ($search=='flower_basket' ) echo 'selected' ; ?>
+                        >กระเช้าดอกไม้</option>
+                    <option value="bouquet_of_money" <?php if ($search=='bouquet_of_money' ) echo 'selected' ; ?>
+                        >ช่อเงิน</option>
+                    <option value="price_of_flowers" <?php if ($search=='price_of_flowers' ) echo 'selected' ; ?>
+                        >ดอกไม้จับราคา</option>
+                    <option value="flower_wrapping_pape" <?php if ($search=='flower_wrapping_pape' ) echo 'selected' ;
+                        ?>>กระดาษห่อดอกไม้</option>
+                    <option value="other_equipment" <?php if ($search=='other_equipment' ) echo 'selected' ; ?>
+                        >อุปกรณ์อื่นๆ</option>
+                </select>
 
-                <!-- Pagination -->
-                <?php renderPagination($page, $total_pages, $search); ?>
+            <div class="row">
+                <div class="col-9">
+                    <input type="submit" value="ค้นหา">
+                </div>
+                <div class="col-3">
+                <input type="submit" name="reset" value="คืนค่า" class="btn btn-danger">
+                </div>
+            </div>
+        </form>
+        <br>
+        <table>
+            <tr>
+                <th>ชื่อสินค้า</th>
+                <th>รูปภาพ</th>
+                <th>รายละเอียด</th>
+                <th>ราคาเดิม</th>
+                <th>ราคาโปรโมชั่น</th>
+                <th>ประเภทสินค้า</th>
+                <th>Actions</th>
+            </tr>
+            <?php renderProductTable($result); ?>
+        </table>
 
-                <?php
+        <!-- Pagination -->
+        <?php renderPagination($page, $total_pages, $search); ?>
+
+        <?php
                 // ปิดการเชื่อมต่อฐานข้อมูล
                 $conn->close();
                 ?>
-        </div>
-    </section>
+
+
+    </div>
+</section>
 
 <?php include('footer.html'); ?>

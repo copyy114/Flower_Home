@@ -31,7 +31,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <link href="assets/css/style-admin.css" rel="stylesheet">
+  <link href="assets/css/style-owner.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Delicious
@@ -57,7 +57,7 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <div class="logo me-auto">
-        <h1><a href="dashborad.php">Admin Page <i class="fas fa-user-cog"></i></a></h1>
+        <h1><a href="dashborad.php">Owner Page <i class="fas fa-user-cog"></i></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -69,8 +69,8 @@
           <!-- <li><a class="nav-link scrollto" href="#gallery">แกลอรี่</a></li> -->
           <li class="dropdown"><a href="#"><span>ตั้งค่า</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="./manage_user.php">จัดการ ผู้ใช้</a></li>
               <li><a href="./manage_product.php">จัดการ สินค้า</a></li>
+              <li><a href="./manage_user.php">จัดการ ผู้ใช้งาน</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="logout.php">ออกจากระบบ</a></li>

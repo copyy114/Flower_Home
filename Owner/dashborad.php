@@ -1,7 +1,7 @@
-<?php 
-    include('header-admin.php'); 
-    include('conn.php'); // รวมไฟล์เชื่อมต่อฐานข้อมูล
-    include('functions.php'); // รวมไฟล์ที่มีฟังก์ชัน
+<?php  
+    include('..\Owner\config\header-owner.php'); 
+    include('..\data\conn.php'); // รวมไฟล์เชื่อมต่อฐานข้อมูล 
+    include('..\config\functions.php'); // รวมไฟล์ที่มีฟังก์ชัน
     
     // เรียกใช้งานฟังก์ชันเพื่อหาผลรวม
     $totalQuantity = getTotalQuantity($conn);
@@ -17,7 +17,7 @@
     <main class="main-content position-relative border-radius-lg ">
       <div class="container-fluid py-4 bg-admin">
         <div class="row">
-          <div class="col-xl-3 col-md-6 mb-4">
+          <div class="col-xl-4 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -33,7 +33,7 @@
               </div>
             </div>
           </div>
-          <div class="col-xl-3 col-md-6 mb-4">
+          <div class="col-xl-4 col-md-6 mb-4">
             <div class="card border-left-success shadow h-100 py-2">
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -49,7 +49,7 @@
               </div>
             </div>
           </div>
-          <div class="col-xl-3 col-md-6 mb-4">
+          <div class="col-xl-4 col-md-6 mb-4">
           <a href="manage_product.php" class="text-decoration-none">
             <div class="card border-left-info shadow h-100 py-2">
               <div class="card-body">
@@ -71,27 +71,6 @@
             </div>
             </a>
           </div>
-          <div class="col-xl-3 col-md-6 mb-4">
-            <a href="manage_user.php" class="text-decoration-none">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                        จำนวนผู้ใช้งาน
-                      </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">
-                        ทั้งหมด: <?php echo htmlspecialchars($totalUser); ?> คน
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-user-group fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
       </div>
   <div class="row mt-4">
     <div class="col-lg-7 mb-lg-0 mb-4">
@@ -107,9 +86,6 @@
               <tr>
                 <td class="w-30">
                   <div class="d-flex px-2 py-1 align-items-center">
-                    <div>
-                      <img src="./assets/img/icons/flags/GB.png" alt="รูป">
-                    </div>
                     <div class="ms-4">
                       <p class="text-xs font-weight-bold mb-0">รายละเอียด</p>
                       <h6 class="text-sm mb-0">ดอกไม่กุหลาบ</h6>
@@ -194,4 +170,4 @@
 </section>
 
 
-<?php include('footer.html'); ?>
+<?php include('..\footer.html'); ?>

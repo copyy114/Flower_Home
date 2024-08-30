@@ -6,20 +6,19 @@ include 'conn.php'; // เชื่อมต่อฐานข้อมูล
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $userType = $_POST['user_type'];
 
     // ป้องกัน SQL Injection
     $username = $conn->real_escape_string($username);
 
     // คำสั่ง SQL สำหรับตรวจสอบข้อมูลผู้ใช้
-    $sql = "SELECT * FROM users WHERE username = ? AND user_type = ?";
+    $sql = "SELECT * FROM users WHERE username = ?";
     $stmt = $conn->prepare($sql);
 
     if ($stmt === false) {
         die("การเตรียมคำสั่ง SQL ล้มเหลว: " . $conn->error);
     }
 
-    $stmt->bind_param("ss", $username, $userType);
+    $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -40,15 +39,18 @@ if (isset($_POST['login'])) {
 
             // เก็บข้อมูลในเซสชัน
             $_SESSION['username'] = $username;
-            $_SESSION['user_type'] = $userType;
+        
+            $_SESSION['user_type'] = $row['user_type'];
             $_SESSION['fname'] = $row['fname'];
             $_SESSION['loggedin'] = true; // เพิ่มบรรทัดนี้
 
             // เปลี่ยนเส้นทางไปยังหน้าแดชบอร์ดตามประเภทผู้ใช้
-            if ($userType === 'customer') {
-                header("Location: index.php");
-            } elseif ($userType === 'owner') {
-                header("Location: dashborad.php");
+            if($_SESSION['user_type'] == 'admin'){
+                header("location: Admin/dashborad.php"); 
+            } else if ($_SESSION['user_type'] == 'owner') {
+                header("location: owner/dashborad.php"); 
+            }else if ($_SESSION['user_type'] == 'customer') {
+                header("location: index.php"); 
             }
             exit();
         } else {
@@ -242,13 +244,14 @@ $conn->close();
             <label>รหัสผ่าน:</label>
             <input type="password"  name="password" required>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label>ประเภทผู้ใช้:</label>
             <select  name="user_type" required>
                 <option value="customer">ลูกค้า</option>
                 <option value="owner">เจ้าของร้าน</option>
+                <option value="admin">แอดมิน</option>
             </select>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-6">
                 <button type="submit" name="login">เข้าสู่ระบบ</button>

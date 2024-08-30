@@ -1,6 +1,7 @@
-<?php include('header-admin.php'); 
-
-include 'conn.php';
+<?php 
+    include('..\Admin\config\header-admin.php'); 
+    include('..\data\conn.php'); // รวมไฟล์เชื่อมต่อฐานข้อมูล 
+    include('..\config\functions.php'); // รวมไฟล์ที่มีฟังก์ชัน
 
 $id = $_GET['id'];
 $sql = "SELECT * FROM users WHERE id=?";
@@ -31,8 +32,9 @@ if (!$user) {
 
         <label for="user_type">ประเภทผู้ใช้:</label>
         <select id="user_type" name="user_type" required>
-            <option value="customer" <?php echo ($user['user_type'] == 'customer') ? 'selected' : ''; ?>>Customer</option>
-            <option value="owner" <?php echo ($user['user_type'] == 'owner') ? 'selected' : ''; ?>>Owner</option>
+            <option value="customer" <?php echo ($user['user_type'] == 'customer') ? 'selected' : ''; ?>>ลูกค้า</option>
+            <option value="owner" <?php echo ($user['user_type'] == 'owner') ? 'selected' : ''; ?>>เจ้าของร้าน</option>
+            <option value="admin" <?php echo ($user['user_type'] == 'admin') ? 'selected' : ''; ?>>แอดมิน</option>
         </select><br><br>
 
         <label for="last_login">วันเวลาเข้าสู่ระบบล่าสุด:</label>
@@ -49,4 +51,4 @@ if (!$user) {
 $stmt->close();
 $conn->close();
 ?>
-<?php include('footer.html'); ?> 
+<?php include('..\footer.html'); ?> 
