@@ -52,47 +52,65 @@
           <h2>สินค้าขายดี</h2>
           <p>ทางร้านเราขอแนะนำลูกค้า สำหรับสินค้าที่เป็นที่นิยอมของทางร้าน..</p>
         </div>
- 
         <div class="row">
+        <?php
+include('conn.php');
 
-          <div class="col-lg-4">
-            <div class="box">
-              <h4>สินค้าแนะนำที่ 1</h4>
-              <p>....</p>
-              <p class="fa fa-star "></p>
-              <p class="fa fa-star"></p>
-              <p class="fa fa-star"></p>
-              <p class="fa fa-star"></p>
-              <p class="fa fa-star"></p>
-            </div>
-          </div>
+$sql = "SELECT * FROM tbproduct WHERE is_recommended = TRUE";
+$result = $conn->query($sql);
 
-          <div class="col-lg-4 mt-4 mt-lg-0">
-            <div class="box">
-              <h4>สินค้าแนะนำที่ 2</h4>
-              <p>....</p>
-              <p class="fa fa-star"></p>
-              <p class="fa fa-star"></p>
-              <p class="fa fa-star"></p>
-              <p class="fa fa-star"></p>
-              <p class="fa fa-star"></p>
-            </div>
-          </div>
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        echo "<div class='col-lg-4'>";
+        echo "<div class='box' style='position: relative;'>";
+        echo "<h2>" . $row['name'] . "</h2>";
+        echo "<h5>" . $row['description'] . "</h5>";
+        echo "<img src='assets/img/bestseller.png' alt='Badge' style='position: absolute; top: 0; right: 0; width: 100px; height: auto;'>";
+        echo "<img src='uploaded_files/" . $row["img_path"] . "' alt='Product Image' width='350' height='400'>";
+        echo "<span>";
+        echo "Rating : ";
+        echo "<p class='fa fa-star'></p>";
+        echo "<p class='fa fa-star'></p>";
+        echo "<p class='fa fa-star'></p>";
+        echo "<p class='fa fa-star'></p>";
+        echo "<p class='fa fa-star'></p>";
+        echo "</span>";
+        echo "</div>";
+        echo "</div>";
+    }
+} else {
+    // Define 3 fallback items
+    $fallbackItems = [
+        ['name' => 'สินค้าขายดีที่ 1', 'description' => 'รายละเอียดสินค้าที่ 1', 'image' => 'assets/img/default1.png'],
+        ['name' => 'สินค้าขายดีที่ 2', 'description' => 'รายละเอียดสินค้าที่ 2', 'image' => 'assets/img/default2.png'],
+        ['name' => 'สินค้าขายดีที่ 3', 'description' => 'รายละเอียดสินค้าที่ 3', 'image' => 'assets/img/default3.png'],
+    ];
 
-          <div class="col-lg-4 mt-4 mt-lg-0">
-            <div class="box">
-              <h4>สินค้าแนะนำที่ 3</h4>
-              <p>....</p>
-              <p class="fa fa-star "></p>
-              <p class="fa fa-star"></p>
-              <p class="fa fa-star"></p>
-              <p class="fa fa-star"></p>
-              <p class="fa fa-star"></p>
-            </div>
-          </div>
+    foreach ($fallbackItems as $item) {
+        echo "<div class='col-lg-4'>";
+        echo "<div class='box' style='position: relative;'>";
+        echo "<h2>" . $item['name'] . "</h2>";
+        echo "<h5>" . $item['description'] . "</h5>";
+        echo "<img src='assets/img/bestseller.png' alt='Badge' style='position: absolute; top: 0; right: 0; width: 100px; height: auto;'>";
+        echo "<img src='" . $item['image'] . "' alt='Product Image' width='350' height='400'>";
+        echo "<span>";
+        echo "Rating : ";
+        echo "<p class='fa fa-star'></p>";
+        echo "<p class='fa fa-star'></p>";
+        echo "<p class='fa fa-star'></p>";
+        echo "<p class='fa fa-star'></p>";
+        echo "<p class='fa fa-star'></p>";
+        echo "</span>";
+        echo "</div>";
+        echo "</div>";
+    }
+}
+
+$conn->close();
+?>
+
 
         </div>
-
       </div>
     </section><!-- End Whu Us Section -->
     

@@ -94,10 +94,7 @@ $type_shop_map = getTypeShopMap(); // เรียกใช้ฟังก์ช
                 }
                 ?>
             </select>
-
-
-
-            <input type="submit" value="Search">
+            <input type="submit" value="ค้นหา">
         </form>
         <hr>
         <table>
@@ -125,11 +122,17 @@ $type_shop_map = getTypeShopMap(); // เรียกใช้ฟังก์ช
                     echo "<td><input type='checkbox' name='recommended_products[]' value='" . htmlspecialchars($row['id']) . "' " . ($row['is_recommended'] ? "checked" : "") . "></td>";
                     echo "</tr>";
                 }
-
-                echo "<input type='submit' value='Update Recommendations'>";
+                echo "<div class=\"row\">";
+                echo "<div class=\"col-4\"></div>";
+                echo "<div class=\"col-4\">";
+                echo "<input type='submit' value='อัพเดทสินค้าแนะนำ'>";
+                echo "</div>";
+                echo "<div class=\"col-4\"></div>";
+                echo "</div>";
+                echo "<br>";
                 echo "</form>";
             } else {
-                echo "<tr><td colspan='5'>No products found.</td></tr>";
+                echo "<tr><td colspan='5'>ไม่มีสินค้า....</td></tr>";
             }
             ?>
         </table>
