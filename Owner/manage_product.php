@@ -119,7 +119,7 @@
             
             ?>
         <h2>รายการสินค้า</h2>
-
+ 
         <!-- ฟอร์มค้นหา -->
         <form action="manage_product.php" method="POST">
             <label for="search">ค้นหา ประเภทสินค้า :</label>

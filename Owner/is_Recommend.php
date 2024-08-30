@@ -28,8 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->bind_param("i", $product_id);
             $stmt->execute();
         }
+        $Recommended_message = "<div style='color:green;'>ปักหมุดสินค้าเป็น สินค้าแนะนำแล้ว...</div>";
+    } else {
+        // แสดงข้อความเมื่อไม่มีการเลือกสินค้าแนะนำ
+        $Recommended_message = "<div style='color:red;'>เลิกปักหมุดสินค้าเป็น สินค้าแนะนำแล้ว....</div>";
     }
-    echo "<div style='color:green;'>Recommended products updated successfully.</div>";
 }
 
 // สร้างคำสั่ง SQL สำหรับค้นหาข้อมูลและแบ่งหน้า
@@ -73,24 +76,24 @@ $type_shop_map = getTypeShopMap(); // เรียกใช้ฟังก์ช
     <div class="container text-center ">
 
         <form method="GET" action="is_Recommend.php">
-            <label for="name">Name:</label>
+            <label for="name">ชื่อสินค้า:</label>
             <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($name_query); ?>">
 
-            <label for="description">Description:</label>
+            <label for="description">รายการสินค้า:</label>
             <input type="text" id="description" name="description" value="<?php echo htmlspecialchars($description_query); ?>">
 
-            <label for="type_shop">Type Shop:</label>
+            <label for="type_shop">ประเภทสินค้า:</label>
             <select id="type_shop" name="type_shop">
-    <option value="">-- ค้นหาด้วยประเภทสินค้า --</option>
-    <?php
-    while ($row = $type_shop_result->fetch_assoc()) {
-        $type_shop_value = $row['type_shop'];
-        $display_name = isset($type_shop_map[$type_shop_value]) ? $type_shop_map[$type_shop_value] : $type_shop_value;
-        $selected = ($type_shop_query == $type_shop_value) ? "selected" : "";
-        echo "<option value=\"" . htmlspecialchars($type_shop_value) . "\" $selected>" . htmlspecialchars($display_name) . "</option>";
-    }
-    ?>
-</select>
+                <option value="">-- ค้นหาด้วยประเภทสินค้า --</option>
+                <?php
+                while ($row = $type_shop_result->fetch_assoc()) {
+                    $type_shop_value = $row['type_shop'];
+                    $display_name = isset($type_shop_map[$type_shop_value]) ? $type_shop_map[$type_shop_value] : $type_shop_value;
+                    $selected = ($type_shop_query == $type_shop_value) ? "selected" : "";
+                    echo "<option value=\"" . htmlspecialchars($type_shop_value) . "\" $selected>" . htmlspecialchars($display_name) . "</option>";
+                }
+                ?>
+            </select>
 
 
 
@@ -106,6 +109,7 @@ $type_shop_map = getTypeShopMap(); // เรียกใช้ฟังก์ช
                 <th>สินค้าแนะนำ</th>
             </tr>
             <?php
+            echo $Recommended_message;
             if ($result->num_rows > 0) {
                 echo "<form method='POST' action='is_Recommend.php'>";
 
