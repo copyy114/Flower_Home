@@ -45,7 +45,7 @@
     </section><!-- End About Section -->
 
     <!-- ======= Whu Us Section ======= -->
-    <section id="why-us" class="why-us">
+    <section id="best-seller" class="why-us">
       <div class="container">
 
         <div class="section-title">
@@ -53,69 +53,18 @@
           <p>ทางร้านเราขอแนะนำลูกค้า สำหรับสินค้าที่เป็นที่นิยอมของทางร้าน..</p>
         </div>
         <div class="row">
-        <?php
-include('conn.php');
-
-$sql = "SELECT * FROM tbproduct WHERE is_recommended = TRUE";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        echo "<div class='col-lg-4'>";
-        echo "<div class='box' style='position: relative;'>";
-        echo "<h2>" . $row['name'] . "</h2>";
-        echo "<h5>" . $row['description'] . "</h5>";
-        echo "<img src='assets/img/bestseller.png' alt='Badge' style='position: absolute; top: 0; right: 0; width: 100px; height: auto;'>";
-        echo "<img src='uploaded_files/" . $row["img_path"] . "' alt='Product Image' width='350' height='400'>";
-        echo "<span>";
-        echo "Rating : ";
-        echo "<p class='fa fa-star'></p>";
-        echo "<p class='fa fa-star'></p>";
-        echo "<p class='fa fa-star'></p>";
-        echo "<p class='fa fa-star'></p>";
-        echo "<p class='fa fa-star'></p>";
-        echo "</span>";
-        echo "</div>";
-        echo "</div>";
-    }
-} else {
-    // Define 3 fallback items
-    $fallbackItems = [
-        ['name' => 'สินค้าขายดีที่ 1', 'description' => 'รายละเอียดสินค้าที่ 1', 'image' => 'assets/img/default1.png'],
-        ['name' => 'สินค้าขายดีที่ 2', 'description' => 'รายละเอียดสินค้าที่ 2', 'image' => 'assets/img/default2.png'],
-        ['name' => 'สินค้าขายดีที่ 3', 'description' => 'รายละเอียดสินค้าที่ 3', 'image' => 'assets/img/default3.png'],
-    ];
-
-    foreach ($fallbackItems as $item) {
-        echo "<div class='col-lg-4'>";
-        echo "<div class='box' style='position: relative;'>";
-        echo "<h2>" . $item['name'] . "</h2>";
-        echo "<h5>" . $item['description'] . "</h5>";
-        echo "<img src='assets/img/bestseller.png' alt='Badge' style='position: absolute; top: 0; right: 0; width: 100px; height: auto;'>";
-        echo "<img src='" . $item['image'] . "' alt='Product Image' width='350' height='400'>";
-        echo "<span>";
-        echo "Rating : ";
-        echo "<p class='fa fa-star'></p>";
-        echo "<p class='fa fa-star'></p>";
-        echo "<p class='fa fa-star'></p>";
-        echo "<p class='fa fa-star'></p>";
-        echo "<p class='fa fa-star'></p>";
-        echo "</span>";
-        echo "</div>";
-        echo "</div>";
-    }
-}
-
-$conn->close();
-?>
-
-
+          <?php
+            include('conn.php');
+            include('functions.php');
+            displayRecommendedProducts($conn);
+            $conn->close();
+          ?>
         </div>
       </div>
     </section><!-- End Whu Us Section -->
     
     <!-- ======= Events Section ======= -->
-    <section id="events" class="events">
+    <section id="promotion" class="events">
       <div class="container">
 
         <div class="section-title">
@@ -133,7 +82,7 @@ $conn->close();
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>เเนะนำหน้าร้าน</h3>
                   <div class="price">
-                    <p><span>$189</span></p>
+                    <p><span>฿189</span></p>
                   </div>
                   <p class="fst-italic">
                    ร้าน อุปกรณ์เครื่องเขียน และ ร้านดอกไม้flower's home
@@ -152,7 +101,7 @@ $conn->close();
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>โปรโมชั่น</h3>
                   <div class="price">
-                    <p><span>$290</span></p>
+                    <p><span>฿290</span></p>
                   </div>
                   <p class="fst-italic">
                     สำหรับโปรโมชั้น โปรวันเเม่ ใครสนใจก็รีบมาสั่งน๊า 
@@ -177,7 +126,7 @@ $conn->close();
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>ช่อดอกไม้ เเจกัน</h3>
                   <div class="price">
-                    <p><span>$350</span></p>
+                    <p><span>฿350</span></p>
                   </div>
                   <p class="fst-italic">
                     ใครสนใจเเจกกันดอกไม้สวยๆสามารถกดลงตะกร้า หรือเดินทางไปดูที่ร้าน flower's Home
@@ -215,7 +164,7 @@ $conn->close();
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-1.jpg" class="gallery-lightbox">
+              <a href="assets/img/ก1.jpg" class="gallery-lightbox">
                 <img src="assets/img/ก1.jpg" alt="" class="img-fluid">
               </a>
             </div>
@@ -223,7 +172,7 @@ $conn->close();
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-2.jpg" class="gallery-lightbox">
+              <a href="assets/img/ก2.jpg" class="gallery-lightbox">
                 <img src="assets/img/ก2.jpg" alt="" class="img-fluid">
               </a>
             </div>
@@ -231,7 +180,7 @@ $conn->close();
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-3.jpg" class="gallery-lightbox">
+              <a href="ssets/img/ก3.jpg" class="gallery-lightbox">
                 <img src="assets/img/ก3.jpg" alt="" class="img-fluid">
               </a>
             </div>
@@ -239,7 +188,7 @@ $conn->close();
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-4.jpg" class="gallery-lightbox">
+              <a href="assets/img/ก4.jpg" class="gallery-lightbox">
                 <img src="assets/img/ก4.jpg" alt="" class="img-fluid">
               </a>
             </div>
@@ -247,7 +196,7 @@ $conn->close();
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-5.jpg" class="gallery-lightbox">
+              <a href="assets/img/ก5.jpg" class="gallery-lightbox">
                 <img src="assets/img/ก5.jpg" alt="" class="img-fluid">
               </a>
             </div>
@@ -255,7 +204,7 @@ $conn->close();
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-6.jpg" class="gallery-lightbox">
+              <a href="assets/img/ก6.jpg" class="gallery-lightbox">
                 <img src="assets/img/ก6.jpg" alt="" class="img-fluid">
               </a>
             </div>
@@ -263,7 +212,7 @@ $conn->close();
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-7.jpg" class="gallery-lightbox">
+              <a href="assets/img/ก7.jpg" class="gallery-lightbox">
                 <img src="assets/img/ก7.jpg" alt="" class="img-fluid">
               </a>
             </div>
@@ -271,7 +220,7 @@ $conn->close();
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-8.jpg" class="gallery-lightbox">
+              <a href="assets/img/ก9.jpg" class="gallery-lightbox">
                 <img src="assets/img/ก9.jpg" alt="" class="img-fluid">
               </a>
             </div>
@@ -283,7 +232,7 @@ $conn->close();
     </section><!-- End Gallery Section -->
 
     <!-- ======= Chefs Section ======= -->
-    <section id="chefs" class="chefs">
+    <section id="member" class="chefs">
       <div class="container">
 
         <div class="section-title">
