@@ -377,12 +377,12 @@
                 while ($row = $result->fetch_assoc()) {
                     echo "<div class='col-lg-4'>";
                     echo "<div class='box' style='position: relative;'>";
-                    echo "<h2>" . htmlspecialchars($row['name']) . "</h2>";
-                    echo "<h5>" . htmlspecialchars($row['description']) . "</h5>";
+                    echo "<h3>" . htmlspecialchars($row['name']) . "</h3>";
+                    echo "<h5>รายละเอียด : " . htmlspecialchars($row['description']) . "</h5>";
                     echo "<img src='assets/img/bestseller.png' alt='Badge' style='position: absolute; top: 0; right: 0; width: 100px; height: auto;'>";
                     echo "<img src='uploaded_files/" . htmlspecialchars($row["img_path"]) . "' alt='Product Image' width='350' height='400'>";
                     echo "<span>";
-                    echo "Rating : ";
+                    echo "ความนิยม : ";
                     echo "<p class='fa fa-star'></p>";
                     echo "<p class='fa fa-star'></p>";
                     echo "<p class='fa fa-star'></p>";
