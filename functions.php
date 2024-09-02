@@ -395,9 +395,9 @@
             } else {
                 // Define fallback items
                 $fallbackItems = [
-                    ['name' => 'สินค้าขายดีที่ 1', 'description' => 'รายละเอียดสินค้าที่ 1', 'image' => 'assets/img/default1.png'],
-                    ['name' => 'สินค้าขายดีที่ 2', 'description' => 'รายละเอียดสินค้าที่ 2', 'image' => 'assets/img/default2.png'],
-                    ['name' => 'สินค้าขายดีที่ 3', 'description' => 'รายละเอียดสินค้าที่ 3', 'image' => 'assets/img/default3.png'],
+                    ['name' => 'สินค้าขายดีที่ 1', 'description' => 'รายละเอียดสินค้าที่ 1', 'image' => ''],
+                    ['name' => 'สินค้าขายดีที่ 2', 'description' => 'รายละเอียดสินค้าที่ 2', 'image' => ''],
+                    ['name' => 'สินค้าขายดีที่ 3', 'description' => 'รายละเอียดสินค้าที่ 3', 'image' => ''],
                 ];
 
                 foreach ($fallbackItems as $item) {

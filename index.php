@@ -9,7 +9,7 @@
   <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="events" class="about">
+    <section id="about" class="about">
       <div class="container-fluid">
 
         <div class="row">
@@ -44,7 +44,7 @@
     
     </section><!-- End About Section -->
 
-    <!-- ======= Whu Us Section ======= -->
+    <!-- ======= best-seller Section ======= -->
     <section id="best-seller" class="why-us">
       <div class="container">
 
@@ -61,9 +61,9 @@
           ?>
         </div>
       </div>
-    </section><!-- End Whu Us Section -->
+    </section><!-- End best-seller Section -->
     
-    <!-- ======= Events Section ======= -->
+    <!-- ======= promotion Section ======= -->
     <section id="promotion" class="events">
       <div class="container">
 
@@ -77,11 +77,11 @@
             <div class="swiper-slide">
               <div class="row event-item">
                 <div class="col-lg-6">
-                  <img src="assets/img/ร้าน.png" class="img-fluid" alt="">
+                  <img src="assets/img/ร้าน.png" class="img-fluid img-fluid-edit-promotion" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>เเนะนำหน้าร้าน</h3>
-                  <div class="price">
+                  <div class="price"> 
                     <p><span>฿189</span></p>
                   </div>
                   <p class="fst-italic">
@@ -96,7 +96,7 @@
             <div class="swiper-slide">
               <div class="row event-item">
                 <div class="col-lg-6">
-                  <img src="assets/img/โปรโมชั่น1.png" class="img-fluid" alt="">
+                  <img src="assets/img/โปรโมชั่น1.png" class="img-fluid img-fluid-edit-promotion" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>โปรโมชั่น</h3>
@@ -121,7 +121,7 @@
             <div class="swiper-slide">
               <div class="row event-item">
                 <div class="col-lg-6">
-                  <img src="assets/img/เเจกัน.png" class="img-fluid" alt="">
+                  <img src="assets/img/เเจกัน.png" class="img-fluid img-fluid-edit-promotion" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>ช่อดอกไม้ เเจกัน</h3>
@@ -146,9 +146,7 @@
         </div>
 
       </div>
-    </section><!-- End Events Section -->
-
-    <!-- ======= Book A Table Section ======= -->
+    </section><!-- End promotion Section -->
 
     <!-- ======= Gallery Section ======= -->
     <section id="gallery" class="gallery">
@@ -156,8 +154,6 @@
 
         <div class="section-title">
           <h2 style="font-family: Kanit, sans-serif;">แหล่ง <span>แกลอรี่</span></h2>
-          <!-- <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p> -->
-      <hr>
         </div>
 
         <div class="row g-0">
@@ -231,13 +227,12 @@
       </div>
     </section><!-- End Gallery Section -->
 
-    <!-- ======= Chefs Section ======= -->
+    <!-- ======= member Section ======= -->
     <section id="member" class="chefs">
       <div class="container">
 
         <div class="section-title">
           <h2 style="font-family: Kanit, sans-serif;" >สมาชิก <span>ในกลุ่ม</span></h2>
-          <hr>
         </div>
 
         <div class="row">
@@ -295,10 +290,10 @@
         </div>
 
       </div>
-    </section><!-- End Chefs Section -->
+    </section><!-- End member Section -->
 
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
+    <!-- ======= comment Section ======= -->
+    <section id="comment" class="testimonials">
       <div class="container position-relative">
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -318,7 +313,7 @@
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div><!-- End comment item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -334,7 +329,7 @@
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div><!-- End comment item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -350,7 +345,7 @@
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div><!-- End comment item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -366,7 +361,7 @@
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div><!-- End comment item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -382,14 +377,14 @@
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div><!-- End comment item -->
 
           </div>
           <div class="swiper-pagination"></div>
         </div>
 
       </div>
-    </section><!-- End Testimonials Section -->
+    </section><!-- End comment  Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
