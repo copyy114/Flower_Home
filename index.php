@@ -14,7 +14,7 @@
 
         <div class="row">
 
-          <div class="col-lg-5 align-items-stretch video-box" style='background-image: url("assets/img/about.jpg");'>
+          <div class="col-lg-5 align-items-stretch video-box" style='background-image: url("assets/img/flower-vdo.png");'>
             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn mb-4"></a>
           </div>
 
@@ -49,8 +49,8 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>สินค้าขายดี</h2>
-          <p>ทางร้านเราขอแนะนำลูกค้า สำหรับสินค้าที่เป็นที่นิยอมของทางร้าน..</p>
+          <h2>สินค้า<span>ขายดี</span></h2>
+          <p>ทางร้านเราขอแนะนำลูกค้า สำหรับสินค้าที่เป็นที่นิยมของทางร้าน..</p>
         </div>
         <div class="row">
           <?php

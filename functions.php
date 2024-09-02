@@ -380,7 +380,7 @@
                     echo "<h3>" . htmlspecialchars($row['name']) . "</h3>";
                     echo "<h5>รายละเอียด : " . htmlspecialchars($row['description']) . "</h5>";
                     echo "<img src='assets/img/bestseller.png' alt='Badge' style='position: absolute; top: 0; right: 0; width: 100px; height: auto;'>";
-                    echo "<img src='uploaded_files/" . htmlspecialchars($row["img_path"]) . "' alt='Product Image' width='350' height='400'>";
+                    echo "<img src='uploaded_files/" . htmlspecialchars($row["img_path"]) . "' alt=' รูปตัวอย่างสินค้า' width='350' height='400'>";
                     echo "<span>";
                     echo "ความนิยม : ";
                     echo "<p class='fa fa-star'></p>";
@@ -395,9 +395,9 @@
             } else {
                 // Define fallback items
                 $fallbackItems = [
-                    ['name' => 'สินค้าขายดีที่ 1', 'description' => 'รายละเอียดสินค้าที่ 1', 'image' => ''],
-                    ['name' => 'สินค้าขายดีที่ 2', 'description' => 'รายละเอียดสินค้าที่ 2', 'image' => ''],
-                    ['name' => 'สินค้าขายดีที่ 3', 'description' => 'รายละเอียดสินค้าที่ 3', 'image' => ''],
+                    ['name' => 'ตัวอย่างสินค้า', 'description' => 'รายละเอียดตัวอย่างสินค้า', 'image' => ''],
+                    ['name' => 'ตัวอย่างสินค้า', 'description' => 'รายละเอียดตัวอย่างสินค้า', 'image' => ''],
+                    ['name' => 'ตัวอย่างสินค้า', 'description' => 'รายละเอียดตัวอย่างสินค้า', 'image' => ''],
                 ];
 
                 foreach ($fallbackItems as $item) {
@@ -406,14 +406,9 @@
                     echo "<h2>" . htmlspecialchars($item['name']) . "</h2>";
                     echo "<h5>" . htmlspecialchars($item['description']) . "</h5>";
                     echo "<img src='assets/img/bestseller.png' alt='Badge' style='position: absolute; top: 0; right: 0; width: 100px; height: auto;'>";
-                    echo "<img src='" . htmlspecialchars($item['image']) . "' alt='Product Image' width='350' height='400'>";
+                    echo "<img src='" . htmlspecialchars($item['image']) . "' alt='รูปตัวอย่างสินค้า' width='350' height='400'>";
                     echo "<span>";
-                    echo "Rating : ";
-                    echo "<p class='fa fa-star'></p>";
-                    echo "<p class='fa fa-star'></p>";
-                    echo "<p class='fa fa-star'></p>";
-                    echo "<p class='fa fa-star'></p>";
-                    echo "<p class='fa fa-star'></p>";
+                    echo "Rating : ---";
                     echo "</span>";
                     echo "</div>";
                     echo "</div>";
