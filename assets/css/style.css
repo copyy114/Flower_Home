@@ -1637,8 +1637,23 @@ Text setting   *
 .member .member_edit {
   border: 1px solid #ccc;
   padding: 10px;
-  background: white;
+  background: rgb(250, 213, 230);
+  border-radius: 10px;
 
+}
+
+.member .member_edit h5 {
+  color:white;
+  background-color:#e95ba2;
+  border-radius:15px;
+  padding:5px;
+  margin-top:5%;
+
+}
+
+.member .member_edit .btn-buy {
+  color: white;
+  background-color:#e95ba2;
 }
 
 .img-fluid-edit{

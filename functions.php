@@ -65,20 +65,20 @@
 
                     if ($currentPrice == 0) {
                         $formattedDiscount = "ไม่มีส่วนลด";
-                        $priceDisplay = '<p><i class="fa-solid fa-baht-sign"></i>' . $formattedPrevPrice . '</p>';
+                        $priceDisplay = '<p>ราคา : <i class="fa-solid fa-baht-sign"></i>' . $formattedPrevPrice . '</p>';
                     } else {
                         if ($prevPrice > 0) {
                             $discount = $prevPrice - $currentPrice;
                             if ($discount > 0) {
                                 $formattedDiscount = "ส่วนลด " . number_format($discount, 2) . " บ.";
-                                $priceDisplay = '<p><i style="color:red;" class="fa-solid fa-baht-sign">' . $formattedCurrentPrice . '</i>&nbsp;&nbsp; <del><i class="fa-solid fa-baht-sign"></i>' . $formattedPrevPrice . '</del></p>';
+                                $priceDisplay = '<p>ราคา : <i style="color:red;" class="fa-solid fa-baht-sign">' . $formattedCurrentPrice . '</i>&nbsp;&nbsp; <del><i class="fa-solid fa-baht-sign"></i>' . $formattedPrevPrice . '</del></p>';
                             } else {
                                 $formattedDiscount = "ไม่มีส่วนลด";
-                                $priceDisplay = '<p><i style="color:red;" class="fa-solid fa-baht-sign">' . $formattedCurrentPrice . '</i>&nbsp;&nbsp; <i class="fa-solid fa-baht-sign"></i>' . $formattedPrevPrice . '</p>';
+                                $priceDisplay = '<p>ราคา : <i style="color:red;" class="fa-solid fa-baht-sign">' . $formattedCurrentPrice . '</i>&nbsp;&nbsp; <i class="fa-solid fa-baht-sign"></i>' . $formattedPrevPrice . '</p>';
                             }
                         } else {
                             $formattedDiscount = "";
-                            $priceDisplay = '<p><i style="color:red;" class="fa-solid fa-baht-sign">' . $formattedCurrentPrice . '</i></p>';
+                            $priceDisplay = '<p>ราคา : <i style="color:red;" class="fa-solid fa-baht-sign">' . $formattedCurrentPrice . '</i></p>';
                         }
                     }
 
@@ -88,20 +88,20 @@
                     echo '            <div><img src="' . $filePath . '" class="img-fluid" alt="Product Image"></div>';
                     echo '            <div class="row">';
                     echo '                <div class="col-6 text-center">';
-                    echo '                    <h5 style="color:white;background-color:red;border-radius:15px;padding:5px;margin-top:5%;">' . $formattedDiscount . '</h5>';
+                    echo '                    <h5>' . $formattedDiscount . '</h5>';
                     echo '                </div>';
                     echo '            </div>';
                     echo '            <div class="row">';
                     echo '                <div class="col-12">';
                     echo '                    <div class="text_left">';
-                    echo '                        <p>' . $name . '</p>';
-                    echo '                        <p>' . $description . '</p>';
+                    echo '                        <p>ชื่อสินค้า : ' . $name . '</p>';
+                    echo '                        <p>รายละเอียด : ' . $description . '</p>';
                     echo '                        ' . $priceDisplay;
                     echo '                    </div>';
                     echo '                </div>';
                     echo '            <div class="row">';
                     echo '                <div class="col-12 text_left">';
-                    echo '                    <a href="cart.php?action=add&id=' . $id . '" class="btn btn-primary">  <i class="fas fa-shopping-cart"></i> สั่งซื้อ</a>';
+                    echo '                    <a href="cart.php?action=add&id=' . $id . '" class="btn btn-buy">  <i class="fas fa-shopping-cart"></i> สั่งซื้อ</a>';
                     echo '                </div>';
                     echo '                </div>';
                     echo '            </div>';
