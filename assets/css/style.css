@@ -1662,9 +1662,16 @@ Text setting   *
 
 }
 
+.img-fluid-edit-prodution{
+  width: 240px !important;
+  height: 230px !important;
+  border-radius: 10px;
+}
+
 .img-fluid-edit-promotion{
   width: 490px!important;
   height: 550px !important;
+  justify-items: center;
 
 }
 /* General Styles */

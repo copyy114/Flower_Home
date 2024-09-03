@@ -1,166 +1,173 @@
 <?php
-function displayProducts($conn, $type_shops, $currentPage = 1, $itemsPerPage = 3, $search = '') {
-    // Convert the array to a string of placeholders for the SQL query
-    $placeholders = implode(',', array_fill(0, count($type_shops), '?'));
+   
+   // ---------------- ส่วนข้อหน้า แสดงรายการสินค้าต่างๆ เช่น ดอกไม้ราคา 25  ------------------- //
+    function displayProducts($conn, $type_shops, $currentPage = 1, $itemsPerPage = 3, $search = '') {
+        // Convert the array to a string of placeholders for the SQL query
+        $placeholders = implode(',', array_fill(0, count($type_shops), '?'));
 
-    // Step 1: Count total items for pagination with search
-    $countSql = "SELECT COUNT(*) AS totalItems FROM tbproduct WHERE type_shop IN ($placeholders)";
-    if (!empty($search)) {
-        $countSql .= " AND name LIKE ?";
-    }
-    
-    $countStmt = $conn->prepare($countSql);
-    $types = str_repeat('s', count($type_shops)); 
-    $params = $type_shops;
+        // Step 1: Count total items for pagination with search
+        $countSql = "SELECT COUNT(*) AS totalItems FROM tbproduct WHERE type_shop IN ($placeholders)";
+        if (!empty($search)) {
+            $countSql .= " AND name LIKE ?";
+        }
+        
+        $countStmt = $conn->prepare($countSql);
+        $types = str_repeat('s', count($type_shops)); 
+        $params = $type_shops;
 
-    if (!empty($search)) {
-        $types .= 's';
-        $params[] = '%' . $search . '%';
-    }
-    
-    $countStmt->bind_param($types, ...$params);
-    $countStmt->execute();
-    $countResult = $countStmt->get_result();
-    $totalItems = $countResult->fetch_assoc()['totalItems'];
+        if (!empty($search)) {
+            $types .= 's';
+            $params[] = '%' . $search . '%';
+        }
+        
+        $countStmt->bind_param($types, ...$params);
+        $countStmt->execute();
+        $countResult = $countStmt->get_result();
+        $totalItems = $countResult->fetch_assoc()['totalItems'];
 
-    // Calculate the total number of pages
-    $totalPages = ceil($totalItems / $itemsPerPage);
+        // Calculate the total number of pages
+        $totalPages = ceil($totalItems / $itemsPerPage);
 
-    // Calculate the OFFSET value
-    $offset = ($currentPage - 1) * $itemsPerPage;
+        // Calculate the OFFSET value
+        $offset = ($currentPage - 1) * $itemsPerPage;
 
-    // Step 2: Fetch data with LIMIT, OFFSET, and search
-    $sql = "SELECT id, name, description, prev_price, current_price, img_path 
-            FROM tbproduct 
-            WHERE type_shop IN ($placeholders)";
-    
-    if (!empty($search)) {
-        $sql .= " AND name LIKE ?";
-    }
+        // Step 2: Fetch data with LIMIT, OFFSET, and search
+        $sql = "SELECT id, name, description, prev_price, current_price, img_path 
+                FROM tbproduct 
+                WHERE type_shop IN ($placeholders)";
+        
+        if (!empty($search)) {
+            $sql .= " AND name LIKE ?";
+        }
 
-    $sql .= " LIMIT ? OFFSET ?";
-    
-    $stmt = $conn->prepare($sql);
-    $typesWithLimitOffset = $types . 'ii';
-    $paramsWithLimitOffset = array_merge($params, [$itemsPerPage, $offset]);
-    $stmt->bind_param($typesWithLimitOffset, ...$paramsWithLimitOffset);
+        $sql .= " LIMIT ? OFFSET ?";
+        
+        $stmt = $conn->prepare($sql);
+        $typesWithLimitOffset = $types . 'ii';
+        $paramsWithLimitOffset = array_merge($params, [$itemsPerPage, $offset]);
+        $stmt->bind_param($typesWithLimitOffset, ...$paramsWithLimitOffset);
 
-    $stmt->execute();
-    $result = $stmt->get_result();
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-    if ($result && $result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $id = htmlspecialchars($row["id"]);
-                $fileName = htmlspecialchars($row["img_path"]);
-                $filePath = 'uploaded_files/' . $fileName;
-                $name = htmlspecialchars($row["name"]);
-                $description = htmlspecialchars($row["description"]);
-                $prevPrice = (float) htmlspecialchars($row["prev_price"]);
-                $currentPrice = (float) htmlspecialchars($row["current_price"]);
+        if ($result && $result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $id = htmlspecialchars($row["id"]);
+                    $fileName = htmlspecialchars($row["img_path"]);
+                    $filePath = 'uploaded_files/' . $fileName;
+                    $name = htmlspecialchars($row["name"]);
+                    $description = htmlspecialchars($row["description"]);
+                    $prevPrice = (float) htmlspecialchars($row["prev_price"]);
+                    $currentPrice = (float) htmlspecialchars($row["current_price"]);
 
-                $formattedCurrentPrice = number_format($currentPrice, 2);
-                $formattedPrevPrice = number_format($prevPrice, 2);
+                    $formattedCurrentPrice = number_format($currentPrice, 2);
+                    $formattedPrevPrice = number_format($prevPrice, 2);
 
-                if ($currentPrice == 0) {
-                    $formattedDiscount = "ไม่มีส่วนลด";
-                    $priceDisplay = '<p><i class="fa-solid fa-baht-sign"></i>' . $formattedPrevPrice . '</p>';
-                } else {
-                    if ($prevPrice > 0) {
-                        $discount = $prevPrice - $currentPrice;
-                        if ($discount > 0) {
-                            $formattedDiscount = "ส่วนลด " . number_format($discount, 2) . " บ.";
-                            $priceDisplay = '<p><i style="color:red;" class="fa-solid fa-baht-sign">' . $formattedCurrentPrice . '</i>&nbsp;&nbsp; <del><i class="fa-solid fa-baht-sign"></i>' . $formattedPrevPrice . '</del></p>';
-                        } else {
-                            $formattedDiscount = "ไม่มีส่วนลด";
-                            $priceDisplay = '<p><i style="color:red;" class="fa-solid fa-baht-sign">' . $formattedCurrentPrice . '</i>&nbsp;&nbsp; <i class="fa-solid fa-baht-sign"></i>' . $formattedPrevPrice . '</p>';
-                        }
+                    if ($currentPrice == 0) {
+                        $formattedDiscount = "ไม่มีส่วนลด";
+                        $priceDisplay = '<p>ราคา : <i class="fa-solid fa-baht-sign"></i>' . $formattedPrevPrice . '</p>';
                     } else {
-                        $formattedDiscount = "";
-                        $priceDisplay = '<p><i style="color:red;" class="fa-solid fa-baht-sign">' . $formattedCurrentPrice . '</i></p>';
+                        if ($prevPrice > 0) {
+                            $discount = $prevPrice - $currentPrice;
+                            if ($discount > 0) {
+                                $formattedDiscount = "ส่วนลด " . number_format($discount, 2) . " บ.";
+                                $priceDisplay = '<p>ราคา : <i style="color:red;" class="fa-solid fa-baht-sign">' . $formattedCurrentPrice . '</i>&nbsp;&nbsp; <del><i class="fa-solid fa-baht-sign"></i>' . $formattedPrevPrice . '</del></p>';
+                            } else {
+                                $formattedDiscount = "ไม่มีส่วนลด";
+                                $priceDisplay = '<p>ราคา : <i style="color:red;" class="fa-solid fa-baht-sign">' . $formattedCurrentPrice . '</i>&nbsp;&nbsp; <i class="fa-solid fa-baht-sign"></i>' . $formattedPrevPrice . '</p>';
+                            }
+                        } else {
+                            $formattedDiscount = "";
+                            $priceDisplay = '<p>ราคา : <i style="color:red;" class="fa-solid fa-baht-sign">' . $formattedCurrentPrice . '</i></p>';
+                        }
                     }
-                }
 
-                echo '<div class="col-lg-4 col-md-6 mb-4">';
-                echo '    <div class="member">';
-                echo '        <div class="member_edit">';
-                echo '            <div><img src="' . $filePath . '" class="img-fluid" alt="Product Image"></div>';
-                echo '            <div class="row">';
-                echo '                <div class="col-6 text-center">';
-                echo '                    <h5 style="color:white;background-color:red;border-radius:15px;padding:5px;margin-top:5%;">' . $formattedDiscount . '</h5>';
-                echo '                </div>';
-                echo '            </div>';
-                echo '            <div class="row">';
-                echo '                <div class="col-12">';
-                echo '                    <div class="text_left">';
-                echo '                        <p>' . $name . '</p>';
-                echo '                        <p>' . $description . '</p>';
-                echo '                        ' . $priceDisplay;
-                echo '                    </div>';
-                echo '                </div>';
-                echo '            <div class="row">';
-                echo '                <div class="col-12 text_left">';
-                echo '                    <a href="cart.php?action=add&id=' . $id . '" class="btn btn-primary">  <i class="fas fa-shopping-cart"></i> สั่งซื้อ</a>';
-                echo '                </div>';
-                echo '                </div>';
-                echo '            </div>';
-                echo '        </div>';
-                echo '    </div>';
-                echo '</div>';
-        }
-    } else {
-        echo '<p>ไม่มีสินค้ามาแสดง.</p>';
-    }
-
-    // Step 3: Display pagination controls with limited page numbers
-    echo '<nav aria-label="Page navigation">';
-    echo '<ul class="pagination justify-content-center">';
-
-    // "ไปหน้าแรกสุด" button
-    if ($currentPage > 1) {
-        echo '<li class="page-item"><a class="page-link" href="?page=1&search=' . urlencode($search) . '">ไปหน้าแรกสุด</a></li>';
-    }
-
-    // Previous page button
-    if ($currentPage > 1) {
-        echo '<li class="page-item"><a class="page-link" href="?page=' . ($currentPage - 1) . '&search=' . urlencode($search) . '">ก่อนหน้า</a></li>';
-    }
-
-    // Determine the start and end page numbers to display
-    $startPage = max(1, $currentPage - 1);
-    $endPage = min($startPage + 2, $totalPages);
-
-    // Adjust start page if at the end
-    if ($endPage - $startPage < 2) {
-        $startPage = max(1, $endPage - 2);
-    }
-
-    // Page number buttons
-    for ($i = $startPage; $i <= $endPage; $i++) {
-        if ($i == $currentPage) {
-            echo '<li class="page-item active"><a class="page-link" href="?page=' . $i . '&search=' . urlencode($search) . '">' . $i . '</a></li>';
+                    echo '<div class="col-lg-3 col-md-6 mb-4">';
+                    echo '    <div class="member">';
+                    echo '        <div class="member_edit text-center">';
+                    echo '            <a href="' . $filePath . '" class="gallery-lightbox">';
+                    echo '            <div><img src="' . $filePath . '" class="img-fluid-edit-prodution" alt="ไม่มีรูปภาพ"></div>';
+                    echo '            </a>';
+                    echo '            <div class="row">';
+                    echo '                <div class="col-6 text-center">';
+                    echo '                    <h5>' . $formattedDiscount . '</h5>';
+                    echo '                </div>';
+                    echo '            </div>';
+                    echo '            <div class="row">';
+                    echo '                <div class="col-12">';
+                    echo '                    <div class="text_left">';
+                    echo '                        <p>ชื่อสินค้า : ' . $name . '</p>';
+                    echo '                        <p>รายละเอียด : ' . $description . '</p>';
+                    echo '                        ' . $priceDisplay;
+                    echo '                    </div>';
+                    echo '                </div>';
+                    echo '            <div class="row">';
+                    echo '                <div class="col-12 text_left">';
+                    echo '                    <a href="cart.php?action=add&id=' . $id . '" class="btn btn-buy">  <i class="fas fa-shopping-cart"></i> สั่งซื้อ</a>';
+                    echo '                </div>';
+                    echo '                </div>';
+                    echo '            </div>';
+                    echo '        </div>';
+                    echo '    </div>';
+                    echo '</div>';
+            }
         } else {
-            echo '<li class="page-item"><a class="page-link" href="?page=' . $i . '&search=' . urlencode($search) . '">' . $i . '</a></li>';
+            echo '<p>ไม่มีสินค้ามาแสดง.</p>';
         }
+
+        // Step 3: Display pagination controls with limited page numbers
+        echo '<nav aria-label="Page navigation">';
+        echo '<ul class="pagination justify-content-center">';
+
+        // "ไปหน้าแรกสุด" button
+        if ($currentPage > 1) {
+            echo '<li class="page-item"><a class="page-link" href="?page=1&search=' . urlencode($search) . '">ไปหน้าแรกสุด</a></li>';
+        }
+
+        // Previous page button
+        if ($currentPage > 1) {
+            echo '<li class="page-item"><a class="page-link" href="?page=' . ($currentPage - 1) . '&search=' . urlencode($search) . '">ก่อนหน้า</a></li>';
+        }
+
+        // Determine the start and end page numbers to display
+        $startPage = max(1, $currentPage - 1);
+        $endPage = min($startPage + 2, $totalPages);
+
+        // Adjust start page if at the end
+        if ($endPage - $startPage < 2) {
+            $startPage = max(1, $endPage - 2);
+        }
+
+        // Page number buttons
+        for ($i = $startPage; $i <= $endPage; $i++) {
+            if ($i == $currentPage) {
+                echo '<li class="page-item active"><a class="page-link" href="?page=' . $i . '&search=' . urlencode($search) . '">' . $i . '</a></li>';
+            } else {
+                echo '<li class="page-item"><a class="page-link" href="?page=' . $i . '&search=' . urlencode($search) . '">' . $i . '</a></li>';
+            }
+        }
+
+        // Next page button
+        if ($currentPage < $totalPages) {
+            echo '<li class="page-item"><a class="page-link" href="?page=' . ($currentPage + 1) . '&search=' . urlencode($search) . '">ถัดไป</a></li>';
+        }
+
+        // "ไปหน้าท้ายสุด" button
+        if ($currentPage < $totalPages) {
+            echo '<li class="page-item"><a class="page-link" href="?page=' . $totalPages . '&search=' . urlencode($search) . '">ไปหน้าท้ายสุด</a></li>';
+        }
+
+        echo '</ul>';
+        echo '</nav>';
+
+        $stmt->close();
+        $countStmt->close();
     }
+    // ---------------- ส่วนข้อหน้า แสดงรายการสินค้าต่างๆ เช่น ดอกไม้ราคา 25  ------------------- //
 
-    // Next page button
-    if ($currentPage < $totalPages) {
-        echo '<li class="page-item"><a class="page-link" href="?page=' . ($currentPage + 1) . '&search=' . urlencode($search) . '">ถัดไป</a></li>';
-    }
 
-    // "ไปหน้าท้ายสุด" button
-    if ($currentPage < $totalPages) {
-        echo '<li class="page-item"><a class="page-link" href="?page=' . $totalPages . '&search=' . urlencode($search) . '">ไปหน้าท้ายสุด</a></li>';
-    }
 
-    echo '</ul>';
-    echo '</nav>';
-
-    $stmt->close();
-    $countStmt->close();
-}
-
-    // ส่วนข้อหน้า Dashborad
+    // ---------------- ส่วนข้อหน้า Dashborad  ------------------- //
     function getTotalQuantity($conn) {
         $sql = "SELECT SUM(quantity) AS total_quantity FROM order_items";
         $result = $conn->query($sql);
@@ -357,6 +364,9 @@ function displayProducts($conn, $type_shops, $currentPage = 1, $itemsPerPage = 3
         $total_pages = ceil($total_items / $items_per_page);
         $result = getProducts($conn, $search, $items_per_page, $offset);
 
+        // ----------------End ส่วนข้อหน้า Dashborad  ------------------- //
+
+
 
         function getTypeShopMap() {
             // สร้าง array ที่เก็บการแมปประเภทสินค้า
@@ -372,4 +382,56 @@ function displayProducts($conn, $type_shops, $currentPage = 1, $itemsPerPage = 3
                 'other_equipment' => 'อุปกรณ์อื่นๆ'
             );
         }
+
+        // ---------------- ส่วนของ สินค้าตัวอย่าง ------------------- //
+        function displayRecommendedProducts($conn) {
+            // SQL query to select recommended products
+            $sql = "SELECT * FROM tbproduct WHERE is_recommended = TRUE";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                // Loop through the result and display each product
+                while ($row = $result->fetch_assoc()) {
+                    echo "<div class='col-lg-4'>";
+                    echo "<div class='box' style='position: relative;'>";
+                    echo "<h3>" . htmlspecialchars($row['name']) . "</h3>";
+                    echo "<h5>รายละเอียด : " . htmlspecialchars($row['description']) . "</h5>";
+                    echo "<img src='assets/img/bestseller.png' alt='Badge' style='position: absolute; top: 0; right: 0; width: 100px; height: auto;'>";
+                    echo "<img src='uploaded_files/" . htmlspecialchars($row["img_path"]) . "' alt=' รูปตัวอย่างสินค้า' width='350' height='400'>";
+                    echo "<span>";
+                    echo "ความนิยม : ";
+                    echo "<p class='fa fa-star'></p>";
+                    echo "<p class='fa fa-star'></p>";
+                    echo "<p class='fa fa-star'></p>";
+                    echo "<p class='fa fa-star'></p>";
+                    echo "<p class='fa fa-star'></p>";
+                    echo "</span>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+            } else {
+                // Define fallback items
+                $fallbackItems = [
+                    ['name' => 'ตัวอย่างสินค้า', 'description' => 'รายละเอียดตัวอย่างสินค้า', 'image' => ''],
+                    ['name' => 'ตัวอย่างสินค้า', 'description' => 'รายละเอียดตัวอย่างสินค้า', 'image' => ''],
+                    ['name' => 'ตัวอย่างสินค้า', 'description' => 'รายละเอียดตัวอย่างสินค้า', 'image' => ''],
+                ];
+
+                foreach ($fallbackItems as $item) {
+                    echo "<div class='col-lg-4'>";
+                    echo "<div class='box' style='position: relative;'>";
+                    echo "<h2>" . htmlspecialchars($item['name']) . "</h2>";
+                    echo "<h5>" . htmlspecialchars($item['description']) . "</h5>";
+                    echo "<img src='assets/img/bestseller.png' alt='Badge' style='position: absolute; top: 0; right: 0; width: 100px; height: auto;'>";
+                    echo "<img src='" . htmlspecialchars($item['image']) . "' alt='รูปตัวอย่างสินค้า' width='350' height='400'>";
+                    echo "<span>";
+                    echo "Rating : ---";
+                    echo "</span>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+            }
+        }
+        // ---------------- End ส่วนของ สินค้าตัวอย่าง ------------------- //
+
 ?>

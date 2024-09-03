@@ -82,10 +82,12 @@
                         }
                     }
 
-                    echo '<div class="col-lg-4 col-md-6 mb-4">';
+                    echo '<div class="col-lg-3 col-md-6 mb-4">';
                     echo '    <div class="member">';
-                    echo '        <div class="member_edit">';
-                    echo '            <div><img src="' . $filePath . '" class="img-fluid" alt="Product Image"></div>';
+                    echo '        <div class="member_edit text-center">';
+                    echo '            <a href="' . $filePath . '" class="gallery-lightbox">';
+                    echo '            <div><img src="' . $filePath . '" class="img-fluid-edit-prodution" alt="ไม่มีรูปภาพ"></div>';
+                    echo '            </a>';
                     echo '            <div class="row">';
                     echo '                <div class="col-6 text-center">';
                     echo '                    <h5>' . $formattedDiscount . '</h5>';

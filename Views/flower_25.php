@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php include('header.html'); ?>
+<?php include('..\header-footer\header.php');  ?>
 
 <main id="main">
 
@@ -23,7 +23,7 @@
 
       <div class="row">
       <?php
-        include("conn.php");
+        include('..\data\conn.php');
         include("functions.php");
 
         // รับค่าการค้นหาจากฟอร์ม
