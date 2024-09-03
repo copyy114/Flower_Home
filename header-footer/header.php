@@ -16,8 +16,8 @@ session_start();
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/logoheader.png" rel="apple-touch-icon">
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/logoheader.png" rel="apple-touch-icon">
   <script src="https://kit.fontawesome.com/31da23dcf7.js" crossorigin="anonymous"></script>
 
   <!-- Google Fonts -->
@@ -28,34 +28,21 @@ session_start();
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Delicious
-  * Template URL: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/
-  * Updated: May 16 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+
 </head>
 
 <body>
 
-  <!-- ======= Top Bar ======= -->
-  <!-- <section id="topbar" class="d-flex align-items-center fixed-top topbar-transparent">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start">
-      <i class="bi bi-phone d-flex align-items-center"><span>+1 5589 55488 55</span></i>
-      <i class="bi bi-clock ms-4 d-none d-lg-flex align-items-center"><span>Mon-Sat: 11:00 AM - 23:00 PM</span></i>
-    </div>
-  </section> -->
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center header-transparent">
@@ -69,7 +56,7 @@ session_start();
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.php">หน้าแรก</a></li>
+          <li><a class="nav-link scrollto active" href="..\index.php">หน้าแรก</a></li>
           <li><a class="nav-link scrollto" href="#best-seller">สินค้าขายดี</a></li>
           <li><a class="nav-link scrollto" href="#member">สมาชิก</a></li>
 
@@ -78,7 +65,7 @@ session_start();
             <ul>
               <li class="dropdown"><a href="#"><span>ดอกไม้</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="Views/flower_25.php" href="#flower_25">ดอกไม้ราคา 25</a></li>
+                  <li><a href="flower_25.php" href="#flower_25">ดอกไม้ราคา 25</a></li>
                   <li><a href="expensive_flowers.php">ดอกไม้ราคาแพง</a></li>
 
                 </ul>
@@ -210,17 +197,17 @@ session_start();
         <div class="carousel-inner" role="listbox">
 
           <!-- Slide 1 -->
-          <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-11.jpg);">
+          <div class="carousel-item active" style="background-image: url(../assets/img/slide/slide-11.jpg);">
 
           </div>
 
           <!-- Slide 2 -->
-          <div class="carousel-item" style="background-image: url(assets/img/slide/slide-22.jpg);">
+          <div class="carousel-item" style="background-image: url(../assets/img/slide/slide-22.jpg);">
 
           </div>
 
           <!-- Slide 3 -->
-          <div class="carousel-item" style="background-image: url(assets/img/slide/slide-33.jpg);">
+          <div class="carousel-item" style="background-image: url(../assets/img/slide/slide-33.jpg);">
 
           </div>
 

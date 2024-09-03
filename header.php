@@ -78,18 +78,18 @@ session_start();
             <ul>
               <li class="dropdown"><a href="#"><span>ดอกไม้</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="Views/flower_25.php" href="#flower_25">ดอกไม้ราคา 25</a></li>
-                  <li><a href="expensive_flowers.php">ดอกไม้ราคาแพง</a></li>
+                  <li><a href="Views/flower_25.php">ดอกไม้ราคา 25</a></li>
+                  <li><a href="Views/expensive_flowers.php">ดอกไม้ราคาแพง</a></li>
 
                 </ul>
               </li>
-              <li><a href="bunch_of_flowers.php">ช่อดอกไม้</a></li>
-              <li><a href="flower_vase.php">แจกันดอกไม้</a></li>
-              <li><a href="flower_basket.php">กระเช้าดอกไม้</a></li>
-              <li><a href="bouquet_of_money.php">ช่อเงิน</a></li>
-              <li><a href="price_of_flowers.php">ดอกไม้จับราคา</a></li>
-              <li><a href="flower_wrapping_pape.php">กระด่าษห่อดอกไม้</a></li>
-              <li><a href="other_equipment.php">อุปกรณ์อื่นๆ</a></li>
+              <li><a href="Views/bunch_of_flowers.php">ช่อดอกไม้</a></li>
+              <li><a href="Views/flower_vase.php">แจกันดอกไม้</a></li>
+              <li><a href="Views/flower_basket.php">กระเช้าดอกไม้</a></li>
+              <li><a href="Views/bouquet_of_money.php">ช่อเงิน</a></li>
+              <li><a href="Views/price_of_flowers.php">ดอกไม้จับราคา</a></li>
+              <li><a href="Views/flower_wrapping_pape.php">กระด่าษห่อดอกไม้</a></li>
+              <li><a href="Views/other_equipment.php">อุปกรณ์อื่นๆ</a></li>
 
             </ul>
           </li>
@@ -172,7 +172,7 @@ session_start();
             }
           </style>
           <li>
-            <a href="cart.php" class="nav-item nav-link active">
+            <a href="Views/cart.php" class="nav-item nav-link active">
               <h5 class="px-5 cart">
                 <i class="fas fa-shopping-cart"></i>
                 <?php

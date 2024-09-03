@@ -1,6 +1,6 @@
 <?php 
 include('header-out.php'); 
-include('conn.php');
+include('data\conn.php');
 
 $message = ''; // ตัวแปรสำหรับเก็บข้อความสถานะ
 

@@ -141,6 +141,5 @@ if ($result === FALSE) {
         </div>
     </section>
 
-    <?php include('..\footer.html'); ?>
-</body>
-</html>
+    <?php include('..\header-footer\footer.php'); ?>
+

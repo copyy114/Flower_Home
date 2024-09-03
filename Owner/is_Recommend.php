@@ -159,4 +159,5 @@ $type_shop_map = getTypeShopMap(); // เรียกใช้ฟังก์ช
 
     </div>
 </section>
-<?php include('..\footer.html'); ?>
+<?php include('..\header-footer\footer.php'); ?>
+

@@ -51,4 +51,4 @@ if (!$user) {
 $stmt->close();
 $conn->close();
 ?>
-<?php include('..\footer.html'); ?> 
+<?php include('..\header-footer\footer.php'); ?>

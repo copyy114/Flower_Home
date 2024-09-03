@@ -181,4 +181,4 @@
     </div>
 </section>
 
-<?php include('..\footer.html'); ?>
+<?php include('..\header-footer\footer.php'); ?>

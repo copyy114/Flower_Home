@@ -1,4 +1,4 @@
-<?php include('header.html'); ?> 
+<?php include('header.php'); ?> 
 
 <!-- <style>
   .container{
@@ -54,8 +54,8 @@
         </div>
         <div class="row">
           <?php
-            include('conn.php');
-            include('functions.php');
+            include('data\conn.php');
+            include('config\functions.php'); // รวมไฟล์ที่มีฟังก์ชัน
             displayRecommendedProducts($conn);
             $conn->close();
           ?>
@@ -176,7 +176,7 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="ssets/img/ก3.jpg" class="gallery-lightbox">
+              <a href="assets/img/ก3.jpg" class="gallery-lightbox">
                 <img src="assets/img/ก3.jpg" alt="" class="img-fluid">
               </a>
             </div>
@@ -408,4 +408,4 @@
   </main><!-- End #main -->
 
  
-  <?php include('footer.html'); ?> 
+  <?php include('footer.php'); ?> 

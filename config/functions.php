@@ -54,7 +54,7 @@
             while ($row = $result->fetch_assoc()) {
                 $id = htmlspecialchars($row["id"]);
                     $fileName = htmlspecialchars($row["img_path"]);
-                    $filePath = 'uploaded_files/' . $fileName;
+                    $filePath = '../uploaded_files/' . $fileName;
                     $name = htmlspecialchars($row["name"]);
                     $description = htmlspecialchars($row["description"]);
                     $prevPrice = (float) htmlspecialchars($row["prev_price"]);

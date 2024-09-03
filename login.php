@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'conn.php'; // เชื่อมต่อฐานข้อมูล
+include('data\conn.php');
 
 // การตรวจสอบการเข้าสู่ระบบ
 if (isset($_POST['login'])) {
@@ -233,9 +233,6 @@ $conn->close();
                 <div class="col-9">
                     <div class=""><label>ชื่อผู้ใช้:</label></div>
                 </div>    
-                <!-- <div class="col-3">
-                    <div class="mb-2"><button ><a href="./register_user.php">ลงทะเบียน</a></button></div>
-                </div> -->
             </div>
             <input type="text" name="username" required>
         </div>
@@ -244,14 +241,7 @@ $conn->close();
             <label>รหัสผ่าน:</label>
             <input type="password"  name="password" required>
         </div>
-        <!-- <div class="form-group">
-            <label>ประเภทผู้ใช้:</label>
-            <select  name="user_type" required>
-                <option value="customer">ลูกค้า</option>
-                <option value="owner">เจ้าของร้าน</option>
-                <option value="admin">แอดมิน</option>
-            </select>
-        </div> -->
+
         <div class="row">
             <div class="col-6">
                 <button type="submit" name="login">เข้าสู่ระบบ</button>
