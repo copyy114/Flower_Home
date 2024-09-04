@@ -222,7 +222,7 @@
         function getPageNumber() {
             return isset($_GET['page']) ? (int)$_GET['page'] : 1;
         }
-        
+         
         function getTotalItems($conn, $search) {
             $sql_count = "SELECT COUNT(*) as total FROM tbproduct";
             if ($search !== '') {
@@ -293,9 +293,13 @@
                     elseif ($row["type_shop"] == 'flower_wrapping_pape') {
                         echo "<td>กระด่าษห่อดอกไม้</td>";
                     }
+                    elseif ($row["type_shop"] == 'bow_set') {
+                        echo "<td>เซทโบว์</td>";
+                    }
                     elseif ($row["type_shop"] == 'other_equipment') {
                         echo "<td>อุปกรณ์อื่นๆ</td>";
                     }
+                
                 
                     
                     echo "<td>
@@ -379,6 +383,7 @@
                 'bouquet_of_money' => 'ช่อเงิน',
                 'price_of_flowers' => 'ดอกไม้จับราคา',
                 'flower_wrapping_pape' => 'กระด่าษห่อดอกไม้',
+                'bow_set' => 'เซทโบว์',
                 'other_equipment' => 'อุปกรณ์อื่นๆ'
             );
         }

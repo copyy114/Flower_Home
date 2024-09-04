@@ -89,6 +89,7 @@ session_start();
               <li><a href="Views/bouquet_of_money.php">ช่อเงิน</a></li>
               <li><a href="Views/price_of_flowers.php">ดอกไม้จับราคา</a></li>
               <li><a href="Views/flower_wrapping_pape.php">กระด่าษห่อดอกไม้</a></li>
+              <li><a href="Views/bow_set.php">เซทโบว์</a></li>
               <li><a href="Views/other_equipment.php">อุปกรณ์อื่นๆ</a></li>
 
             </ul>

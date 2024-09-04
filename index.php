@@ -15,7 +15,7 @@
         <div class="row">
 
           <div class="col-lg-5 align-items-stretch video-box" style='background-image: url("assets/img/flower-vdo.png");'>
-            <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn mb-4"></a>
+            <a href="assets/VDO/VDO.mp4" class="glightbox play-btn mb-4"></a>
           </div>
 
           <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">

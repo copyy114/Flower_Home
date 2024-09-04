@@ -63,6 +63,7 @@
                             <option value="bouquet_of_money">ช่อเงิน</option>
                             <option value="price_of_flowers">ดอกไม้จับราคา</option>
                             <option value="flower_wrapping_pape">กระด่าษห่อดอกไม้</option>
+                            <option value="bow_set">เซทโบว์</option>
                             <option value="other_equipment">อุปกรณ์อื่นๆ</option>
                         </select>
                     </div>
@@ -142,6 +143,8 @@
                         >ดอกไม้จับราคา</option>
                     <option value="flower_wrapping_pape" <?php if ($search=='flower_wrapping_pape' ) echo 'selected' ;
                         ?>>กระดาษห่อดอกไม้</option>
+                    <option value="bow_set" <?php if ($search=='bow_set' ) echo 'selected' ;
+                        ?>>เซทโบว์</option>                        
                     <option value="other_equipment" <?php if ($search=='other_equipment' ) echo 'selected' ; ?>
                         >อุปกรณ์อื่นๆ</option>
                 </select>

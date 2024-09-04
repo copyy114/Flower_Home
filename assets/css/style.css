@@ -1664,7 +1664,7 @@ Text setting   *
 
 .img-fluid-edit-prodution{
   width: 240px !important;
-  height: 300px !important;
+  height: 270px !important;
   border-radius: 10px;
 }
 
@@ -1702,11 +1702,10 @@ header h1 {
 /* Forms */
 form {
     max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #80d0e2;
+    margin-left: inherit;
+    padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
 }
 
 form label {

@@ -115,6 +115,7 @@ $conn->close();
             <option value="bouquet_of_money" <?php echo (htmlspecialchars($type_shop) == 'bouquet_of_money') ? 'selected' : ''; ?>>ช่อเงิน</option>
             <option value="price_of_flowers" <?php echo (htmlspecialchars($type_shop) == 'price_of_flowers') ? 'selected' : ''; ?>>ดอกไม้จับราคา</option>
             <option value="flower_wrapping_pape" <?php echo (htmlspecialchars($type_shop) == 'flower_wrapping_pape') ? 'selected' : ''; ?>>กระด่าษห่อดอกไม้</option>
+            <option value="bow_set" <?php echo (htmlspecialchars($type_shop) == 'bow_set') ? 'selected' : ''; ?>>เซทโบว์</option>
             <option value="other_equipment" <?php echo (htmlspecialchars($type_shop) == 'other_equipment') ? 'selected' : ''; ?>>อุปกรณ์อื่นๆ</option>
         </select>
     </div>

@@ -76,6 +76,7 @@ session_start();
               <li><a href="bouquet_of_money.php">ช่อเงิน</a></li>
               <li><a href="price_of_flowers.php">ดอกไม้จับราคา</a></li>
               <li><a href="flower_wrapping_pape.php">กระด่าษห่อดอกไม้</a></li>
+              <li><a href="bow_set.php">เซทโบว์</a></li>
               <li><a href="other_equipment.php">อุปกรณ์อื่นๆ</a></li>
 
             </ul>
@@ -114,9 +115,9 @@ session_start();
                   <div>
                     <?php
                                 if ($isLoggedIn) {
-                                    echo '<a href="logout.php" class="btn btn-success" style="color: white;">ออกจากระบบ<i class="fas fa-sign-out"></i></a>';
+                                    echo '<a href="..\logout.php" class="btn btn-success" style="color: white;">ออกจากระบบ<i class="fas fa-sign-out"></i></a>';
                                 } else {
-                                    echo '<a href="login.php" class="btn btn-danger" style="color: white;">เข้าสู่ระบบ <i class="fas fa-sign-in"></i></a>';
+                                    echo '<a href="..\login.php" class="btn btn-danger" style="color: white;">เข้าสู่ระบบ <i class="fas fa-sign-in"></i></a>';
                                 }
                               ?>
 

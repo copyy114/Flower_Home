@@ -89,9 +89,9 @@
               <li><a href="bouquet_of_money.php">ช่อเงิน</a></li>
               <li><a href="price_of_flowers.php">ดอกไม้จับราคา</a></li>
               <li><a href="flower_wrapping_pape.php">กระด่าษห่อดอกไม้</a></li>
+              <li><a href="bow_set.php">เซทโบว์</a></li>
               <li><a href="other_equipment.php">อุปกรณ์อื่นๆ</a></li>
               <hr>
-              <li><a href="add.php">เพิ่มข้อมูล</a></li>
 
             </ul>
           </li>
