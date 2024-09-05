@@ -14,22 +14,21 @@
 
         <div class="row">
 
-          <div class="col-lg-5 align-items-stretch video-box" style='background-image: url("assets/img/flower-vdo.png");'>
+          <div class="col-lg-5 align-items-stretch video-box" style='background-image: url("assets/img/ปก.png");'>
             <a href="assets/VDO/VDO.mp4" class="glightbox play-btn mb-4"></a>
           </div>
 
           <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
 
           <div class="content"> 
-              <h3><strong>Flower's Home </strong> บริการรับจัดช่อดอกไม้ ส่งดอกไม้ครบวงจร </h3>
+              <h3><strong>การเดินทางไปร้าน</strong> Flower's Home  </h3>
 
               <p class="fst-italic">
               Flowers speak louder than words ให้ดอกไม้สื่อแทนความรู้สึกดี ๆ และเติมเต็มช่วงเวลาที่แสนพิเศษให้น่าจดจำยิ่งขึ้น
               </p>
               <ul>
                 <li><i class="bx bx-check-double"></i>
-                  ร้านดอกไม้ Flower's Home  เป็นร้านขายดอกไม้ ให้บริการรับจัดดอกไม้ ช่อดอกไม้ กระเช้าดอกไม้ ดอกไม้รหรับเทศกาล โอกาสพิเศษ วันสำคัญต่างๆ 
-              </li>
+                  ใครที่เดินทางมาจาก จังหวัดตรัง ต้องผ่านวิทยาลัยเทคนิคพัทลุง เจอสี่เเยกไฟเเดงโคลีเซียม เเล้วให้เลี้ยวขวาตรงไปได้เลย ขับตรงยาวไปก็จะเจอกับร้านเครื่องเขียนที่อยู่ฝั่งซ้ายมือ เเละขวามือก็จะเจอกับร้าน Flower's Home 
                 <!-- <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li> -->
                 <!-- <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li> -->
               </ul>
