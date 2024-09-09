@@ -129,9 +129,9 @@
                     <div>
                       <?php
                                 if ($isLoggedIn) {
-                                    echo '<a href="logout.php" class="btn btn-success" style="color: white;">ออกจากระบบ<i class="fas fa-sign-out"></i></a>';
+                                    echo '<a href="../logout.php" class="btn btn-success" style="color: white;">ออกจากระบบ<i class="fas fa-sign-out"></i></a>';
                                 } else {
-                                    echo '<a href="login.php" class="btn btn-danger" style="color: white;">เข้าสู่ระบบ <i class="fas fa-sign-in"></i></a>';
+                                    echo '<a href="../login.php" class="btn btn-danger" style="color: white;">เข้าสู่ระบบ <i class="fas fa-sign-in"></i></a>';
                                 }
                               ?>
                  

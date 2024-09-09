@@ -188,7 +188,7 @@ include('..\header-footer\header_option.php');
                                 echo '<a href="logout.php" class="btn btn-danger"><i class="fas fa-sign-in-alt"></i> กรุณาเข้าสู่ระบบก่อนทำการสั่งซื้อ</a>';
                             }
                         } else {
-                            echo '<a href="index.php" class="btn btn-warning"><i class="fas fa-cancel"></i> กรุณาเลือกสินค้าก่อนสั่งซื้อ</a>';
+                            echo '<a href="..\index.php" class="btn btn-warning"><i class="fas fa-cancel"></i> กรุณาเลือกสินค้าก่อนสั่งซื้อ</a>';
                         }
                         ?>
                     </div>

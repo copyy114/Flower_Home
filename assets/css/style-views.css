@@ -1,0 +1,50 @@
+.edit-session-user {
+  background: #e6e6e6;
+  color: #FFF;
+  font-size: 15px;
+  background-color: rgb(228, 64, 201);
+  padding: 10px;
+  border-radius: 8px;
+
+}
+.cart {
+  background-color: #ffffff;
+  /* พื้นหลังของเมนูตะกร้า */
+  color: #000000;
+  /* สีของข้อความในเมนูตะกร้า */
+  padding: 15px;
+  border-radius: 20px;
+  /* มุมโค้ง */
+  margin-bottom: 0;
+}
+
+/* สไตล์สำหรับจำนวนสินค้าตะกร้า */
+#cart_count {
+  background-color: #e95ba2;
+  /* พื้นหลังของจำนวนสินค้า */
+
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+.container{
+    margin-top: 5%;
+}
+
+form {
+  max-width: 400px;
+  margin-left: inherit;
+  padding: 15px;
+  border-radius: 8px;
+  
+}
+.btn-search {
+  padding: 10px;
+  background-color: #ff66a3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+} 

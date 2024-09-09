@@ -1700,7 +1700,7 @@ header h1 {
 }
 
 /* Forms */
-form {
+/* form {
     max-width: 400px;
     margin-left: inherit;
     padding: 15px;
@@ -1734,7 +1734,7 @@ form button {
 
 form button:hover {
     background-color: #e55b95;
-}
+} */
 
 /* Dashboard */
 .dashboard {

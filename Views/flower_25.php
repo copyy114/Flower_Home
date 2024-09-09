@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php include('..\header-footer\header.php');  ?>
+<?php include('..\header-footer\header_view.php');  ?>
 
 
 <main id="main">
@@ -13,13 +13,8 @@
 
       </div>
 
-        <form method="get" action="">
-          <div class="input-group mb-3">
-            <input type="text" name="search" class="form-control" placeholder="ค้นหาสินค้า" value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
-            <button class="btn btn-primary" type="submit">ค้นหา</button>
-          </div>
-        </form>
- 
+      <?php include('..\config\search.php');  ?>
+
     <!-- Search Form -->
 
       <div class="row">
