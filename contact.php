@@ -7,8 +7,10 @@
         padding-right: 0.5rem;
         margin-right: 0.5rem;        
     }
+
+
 </style>
-  <main id="main"></main>
+
 <section id="contact" class="contact">
     <div class="container">
     <div class="row">
