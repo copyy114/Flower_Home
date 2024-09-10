@@ -48,3 +48,58 @@ form {
   cursor: pointer;
   font-size: 16px;
 } 
+.page-link {
+  color: #e95ba2;
+}
+.page-link:hover {
+  color: #e22081;
+}
+.page-item.active .page-link {
+  background-color: #e95ba2; 
+  border-color: #e95ba2;   
+  color: #fff;             
+}
+
+.text_left{
+  text-align: left;
+}
+.product .product_edit {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: rgb(250, 213, 230);
+  border-radius: 10px;
+
+}
+
+.product .product_edit h5 {
+  color:white;
+  background-color:#e95ba2;
+  border-radius:15px;
+  padding:5px;
+  margin-top:5%;
+
+}
+
+.product .product_edit .btn-buy {
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #e95ba2;
+  transition: transform 300ms 0s cubic-bezier(0, 0.23, 0.29, 2.45);
+}
+.product .product_edit .btn-buy:hover {
+  background-color: #e22081;
+  cursor: pointer;
+  transform: translateY(-4px);
+}
+.img-fluid-edit{
+  width: 350px !important;
+  height: 330px !important;
+
+}
+
+.img-fluid-edit-prodution{
+  width: 240px !important;
+  height: 270px !important;
+  border-radius: 10px;
+}

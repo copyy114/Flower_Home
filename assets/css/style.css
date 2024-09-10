@@ -1631,42 +1631,6 @@ section {
 /* *************
 Text setting   *
 ****************/
-.text_left{
-  text-align: left;
-}
-.member .member_edit {
-  border: 1px solid #ccc;
-  padding: 10px;
-  background: rgb(250, 213, 230);
-  border-radius: 10px;
-
-}
-
-.member .member_edit h5 {
-  color:white;
-  background-color:#e95ba2;
-  border-radius:15px;
-  padding:5px;
-  margin-top:5%;
-
-}
-
-.member .member_edit .btn-buy {
-  color: white;
-  background-color:#e95ba2;
-}
-
-.img-fluid-edit{
-  width: 350px !important;
-  height: 330px !important;
-
-}
-
-.img-fluid-edit-prodution{
-  width: 240px !important;
-  height: 270px !important;
-  border-radius: 10px;
-}
 
 .img-fluid-edit-promotion{
   width: 490px!important;
@@ -1683,7 +1647,7 @@ body {
 }
 
 h2 {
-    color: #2c18d8;
+    color: #444444;
 }
 
 /* Header */
@@ -1809,3 +1773,14 @@ center {
 .card:hover{
   font-weight: bolder;
  }
+ .box .btn-buy{
+   color: white; 
+   background-color:#f882bd;
+   width: 100%;
+   margin-top: 10px;
+ }
+ .box .btn-buy:hover{
+   background-color: #e95ba2;
+   color: #fff;
+ }
+ 

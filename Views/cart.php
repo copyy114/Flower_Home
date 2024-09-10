@@ -115,7 +115,9 @@ include('..\header-footer\header_option.php');
 
                             echo '<div class="row border-top border-bottom py-3">';
                             echo '    <div class="col-md-3">';
-                            echo '        <img src="' . $filePath . '" alt="Product Image" class="img-fluid">';
+                            echo '            <a href="' . $filePath . '" class="gallery-lightbox">';
+                            echo '        <img src="' . $filePath . '" alt="Product Image" class="img-cart">';
+                            echo '            </a>';
                             echo '    </div>';
                             echo '    <div class="col-md-6">';
                             echo '        <h5>ชื่อสินค้า : ' . htmlspecialchars($name) . '</h5>';
@@ -199,4 +201,5 @@ include('..\header-footer\header_option.php');
     </div>
 </div>
 
-<?php include('footer.html'); ?>
+<?php include('..\header-footer\footer.php'); ?>
+

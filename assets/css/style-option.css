@@ -1,0 +1,22 @@
+.product .product_edit .btn-buy {
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #e95ba2;
+    transition: transform 300ms 0s cubic-bezier(0, 0.23, 0.29, 2.45);
+  }
+  .product .product_edit .btn-buy:hover {
+    background-color: #e22081;
+    cursor: pointer;
+    transform: translateY(-4px);
+  }
+  .img-cart{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 300ms 0s cubic-bezier(0, 0.23, 0.29, 2.45)
+  }
+  .img-cart:hover{
+    cursor: pointer;
+    transform: translateY(-4px);
+  }

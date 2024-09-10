@@ -31,6 +31,7 @@
 
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/style-option.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Delicious
@@ -71,7 +72,7 @@
         <ul>
           <li><a class="nav-link scrollto active" href="..\index.php" href="#hero">หน้าแรก</a></li>
           <li><a class="nav-link scrollto" href="#about">สินค้าขายดี</a></li>
-          <li><a class="nav-link scrollto" href="#chefs">สมาชิก</a></li>
+          <li><a class="nav-link scrollto" href="..\member.php">สมาชิก</a></li>
 
           <!-- <li><a class="nav-link scrollto" href="#gallery">แกลอรี่</a></li> -->
           <li class="dropdown"><a href="#"><span>สั่งซื้อสินค้า</span> <i class="bi bi-chevron-down"></i></a>
@@ -97,7 +98,7 @@
           </li>
           <li><a class="nav-link scrollto" href="#events">โปรโมชั่น</a></li>
           <li><a class="nav-link scrollto" href="#gallery">แกลอรี่</a></li>
-          <li><a class="nav-link scrollto" href="#contact">ติดต่อ</a></li>
+          <li><a class="nav-link scrollto" href="..\contact.php">ติดต่อ</a></li>
           <li class="dropdown"><a href="#"><span>ตั้งค่าผู้ใช้</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li>

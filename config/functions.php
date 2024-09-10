@@ -83,8 +83,8 @@
                     }
 
                     echo '<div class="col-lg-3 col-md-6 mb-4">';
-                    echo '    <div class="member">';
-                    echo '        <div class="member_edit text-center">';
+                    echo '    <div class="product">';
+                    echo '        <div class="product_edit text-center">';
                     echo '            <a href="' . $filePath . '" class="gallery-lightbox">';
                     echo '            <div><img src="' . $filePath . '" class="img-fluid-edit-prodution" alt="ไม่มีรูปภาพ"></div>';
                     echo '            </a>';
@@ -388,7 +388,7 @@
             );
         }
 
-        // ---------------- ส่วนของ สินค้าตัวอย่าง ------------------- //
+        // ---------------- ส่วนของ สินค้าขายดี ------------------- //
         function displayRecommendedProducts($conn) {
             // SQL query to select recommended products
             $sql = "SELECT * FROM tbproduct WHERE is_recommended = TRUE";
@@ -397,6 +397,7 @@
             if ($result->num_rows > 0) {
                 // Loop through the result and display each product
                 while ($row = $result->fetch_assoc()) {
+                    $id = htmlspecialchars($row["id"]);
                     echo "<div class='col-lg-4'>";
                     echo "<div class='box' style='position: relative;'>";
                     echo "<h3>" . htmlspecialchars($row['name']) . "</h3>";
@@ -411,6 +412,11 @@
                     echo "<p class='fa fa-star'></p>";
                     echo "<p class='fa fa-star'></p>";
                     echo "</span>";
+                    echo '<div class="row">';
+                    echo '<div class="col-12 text_left">';
+                    echo '<a href="views/cart.php?action=add&id=' . $id . '" class="btn btn-buy">  <i class="fas fa-shopping-cart"></i> สั่งซื้อ</a>';
+                    echo '</div>';
+                    echo '</div>';
                     echo "</div>";
                     echo "</div>";
                 }

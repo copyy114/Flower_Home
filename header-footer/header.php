@@ -38,7 +38,6 @@ session_start();
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
 
-
 </head>
 
 <body>
@@ -58,7 +57,7 @@ session_start();
         <ul>
           <li><a class="nav-link scrollto active" href="..\index.php">หน้าแรก</a></li>
           <li><a class="nav-link scrollto" href="#best-seller">สินค้าขายดี</a></li>
-          <li><a class="nav-link scrollto" href="#member">สมาชิก</a></li>
+          <li><a class="nav-link scrollto" href="..\member.php">สมาชิก</a></li>
 
           <!-- <li><a class="nav-link scrollto" href="#gallery">แกลอรี่</a></li> -->
           <li class="dropdown"><a href="#"><span>สั่งซื้อสินค้า</span> <i class="bi bi-chevron-down"></i></a>
@@ -83,7 +82,7 @@ session_start();
           </li>
           <li><a class="nav-link scrollto" href="#promotion">โปรโมชั่น</a></li>
           <li><a class="nav-link scrollto" href="#gallery">แกลอรี่</a></li>
-          <li><a class="nav-link scrollto" href="#contact">ติดต่อ</a></li>
+          <li><a class="nav-link scrollto" href="..\contact.php">ติดต่อ</a></li>
           <li class="dropdown"><a href="#"><span>ตั้งค่าผู้ใช้</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li>
