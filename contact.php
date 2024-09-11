@@ -9,6 +9,9 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+            border-radius: 20px;
+            max-width: 500px;
+            height: 500px;
         }
     </style>
      <img src="assets/img/contact-img.jpg"  class="center-img" alt="">
