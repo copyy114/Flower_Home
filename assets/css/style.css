@@ -1784,7 +1784,7 @@ center {
    color: #fff;
  }
  .contact-contact img{
-    max-width: 100px;
-    height: 100px;
+    max-width: 100%;
+    height: auto;
  }
  
