@@ -1783,4 +1783,8 @@ center {
    background-color: #e95ba2;
    color: #fff;
  }
+ .contact-contact img{
+    max-width: 100px;
+    height: 100px;
+ }
  

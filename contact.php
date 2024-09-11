@@ -14,8 +14,8 @@
 <section id="contact" class="contact">
     <div class="container">
     <div class="row">
-        <div class="col-6">
-            <img src="assets/img/ปก.png" alt="">
+        <div class="col-6 contact-contact">
+            <img src="assets/img/ปก-contact.png" alt="">
         </div>
         <p style="
 border-left:1px dashed #000;">ฟหกฟก</pย>
