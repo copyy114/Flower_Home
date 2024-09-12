@@ -216,12 +216,12 @@ session_start();
           </div>
 
           <!-- Slide 2 -->
-          <div class="carousel-item" style="background-image: url(assets/img/slide/slide-22.jpg);">
+          <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg);">
 
           </div>
 
           <!-- Slide 3 -->
-          <div class="carousel-item" style="background-image: url(assets/img/slide/slide-33.jpg);">
+          <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg);">
 
           </div>
 
