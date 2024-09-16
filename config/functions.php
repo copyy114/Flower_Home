@@ -89,7 +89,7 @@
                     echo '            <div><img src="' . $filePath . '" class="img-fluid-edit-prodution" alt="ไม่มีรูปภาพ"></div>';
                     echo '            </a>';
                     echo '            <div class="row">';
-                    echo '                <div class="col-6 text-center">';
+                    echo '                <div class="col-8 text-center">';
                     echo '                    <h5>' . $formattedDiscount . '</h5>';
                     echo '                </div>';
                     echo '            </div>';
@@ -395,30 +395,63 @@
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
-                // Loop through the result and display each product
                 while ($row = $result->fetch_assoc()) {
                     $id = htmlspecialchars($row["id"]);
-                    echo "<div class='col-lg-4'>";
-                    echo "<div class='box' style='position: relative;'>";
-                    echo "<h3>" . htmlspecialchars($row['name']) . "</h3>";
-                    echo "<h5>รายละเอียด : " . htmlspecialchars($row['description']) . "</h5>";
-                    echo "<img src='assets/img/bestseller.png' alt='Badge' style='position: absolute; top: 0; right: 0; width: 100px; height: auto;'>";
-                    echo "<img src='uploaded_files/" . htmlspecialchars($row["img_path"]) . "' alt=' รูปตัวอย่างสินค้า' width='350' height='400'>";
-                    echo "<span>";
-                    echo "ความนิยม : ";
-                    echo "<p class='fa fa-star'></p>";
-                    echo "<p class='fa fa-star'></p>";
-                    echo "<p class='fa fa-star'></p>";
-                    echo "<p class='fa fa-star'></p>";
-                    echo "<p class='fa fa-star'></p>";
-                    echo "</span>";
-                    echo '<div class="row">';
-                    echo '<div class="col-12 text_left">';
-                    echo '<a href="views/cart.php?action=add&id=' . $id . '" class="btn btn-buy">  <i class="fas fa-shopping-cart"></i> สั่งซื้อ</a>';
-                    echo '</div>';
-                    echo '</div>';
-                    echo "</div>";
-                    echo "</div>";
+                        $fileName = htmlspecialchars($row["img_path"]);
+                        $filePath = 'uploaded_files/' . $fileName;
+                        $name = htmlspecialchars($row["name"]);
+                        $description = htmlspecialchars($row["description"]);
+                        $prevPrice = (float) htmlspecialchars($row["prev_price"]);
+                        $currentPrice = (float) htmlspecialchars($row["current_price"]);
+    
+                        $formattedCurrentPrice = number_format($currentPrice, 2);
+                        $formattedPrevPrice = number_format($prevPrice, 2);
+    
+                        if ($currentPrice == 0) {
+                            $formattedDiscount = "ไม่มีส่วนลด";
+                            $priceDisplay = '<p><h5>ราคา : <i class="fa-solid fa-baht-sign"></i>' . $formattedPrevPrice . '</h5></p>';
+                        } else {
+                            if ($prevPrice > 0) {
+                                $discount = $prevPrice - $currentPrice;
+                                if ($discount > 0) {
+                                    $formattedDiscount = "ส่วนลด " . number_format($discount, 2) . " บ.";
+                                    $priceDisplay = '<p><h5>ราคา : <i style="color:red;" class="fa-solid fa-baht-sign priceDisplay-small">' . $formattedCurrentPrice . '</i>&nbsp;&nbsp; <del><i class="fa-solid fa-baht-sign"></i>' . $formattedPrevPrice . '</del></h5></p>';
+                                } else {
+                                    $formattedDiscount = "ไม่มีส่วนลด";
+                                    $priceDisplay = '<p><h5>ราคา : <i style="color:red;" class="fa-solid fa-baht-sign">' . $formattedCurrentPrice . '</i>&nbsp;&nbsp; <i class="fa-solid fa-baht-sign"></i>' . $formattedPrevPrice . '</h5></p>';
+                                }
+                            } else {
+                                $formattedDiscount = "";
+                                $priceDisplay = '<p><h5>ราคา : <i style="color:red;" class="fa-solid fa-baht-sign">' . $formattedCurrentPrice . '</i></h5></p>';
+                            }
+                        }
+    
+                        echo "<div class='col-lg-4'>";
+                        echo "  <div class='box' style='position: relative;'>";
+                        echo "      <img src='assets/img/bestseller.png' alt='Badge' style='position: absolute; top: 0; right: 0; width: 100px; height: auto;'>";
+                        echo "      <h3>ชื่อสินค้า : $name </h3>";
+                        echo "      <h5>รายละเอียด : $description  </h5>";
+                        echo '      <a href="' . $filePath . '" class="gallery-lightbox">';
+                        echo '         <div><img src="' . $filePath . '" class="img-fluid-edit-prodution" width="350" height="400" alt="ไม่มีรูปภาพ"></div>';
+                        echo '      </a>';
+                        echo '      <br>';
+                        echo '      ' . $priceDisplay;
+                        echo "      <span>";
+                        echo "      ความนิยม : ";
+                        echo "          <p class='fa fa-star'></p>";
+                        echo "          <p class='fa fa-star'></p>";
+                        echo "          <p class='fa fa-star'></p>";
+                        echo "          <p class='fa fa-star'></p>";
+                        echo "          <p class='fa fa-star'></p>";
+                        echo "      </span>";
+                        echo '          <div class="row">';
+                        echo '              <div class="col-12 text_left">';
+                        echo '                  <a href="views/cart.php?action=add&id=' . $id . '" class="btn btn-buy">  <i class="fas fa-shopping-cart"></i> สั่งซื้อ</a>';
+                        echo '              </div>';
+                        echo '          </div>';
+                        echo '  </div>';
+                        echo '</div>';
+
                 }
             } else {
                 // Define fallback items
@@ -427,7 +460,6 @@
                     ['name' => 'ตัวอย่างสินค้า', 'description' => 'รายละเอียดตัวอย่างสินค้า', 'image' => ''],
                     ['name' => 'ตัวอย่างสินค้า', 'description' => 'รายละเอียดตัวอย่างสินค้า', 'image' => ''],
                 ];
-
                 foreach ($fallbackItems as $item) {
                     echo "<div class='col-lg-4'>";
                     echo "<div class='box' style='position: relative;'>";
@@ -443,6 +475,4 @@
                 }
             }
         }
-        // ---------------- End ส่วนของ สินค้าตัวอย่าง ------------------- //
-
 ?>
