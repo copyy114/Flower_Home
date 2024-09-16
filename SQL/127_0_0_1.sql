@@ -53,6 +53,7 @@ INSERT INTO `orders` (`id`, `name`, `email`, `address`, `phone`, `total_amount`,
 --
 -- Table structure for table `order_items`
 --
+ALTER TABLE order_items ADD COLUMN is_new BOOLEAN DEFAULT TRUE;
 
 CREATE TABLE `order_items` (
   `id` int(11) NOT NULL,
