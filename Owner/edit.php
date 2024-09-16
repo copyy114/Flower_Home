@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 // ตรวจสอบว่ามี ID ที่ต้องการแก้ไขหรือไม่
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']);
-    
+     
     // เตรียมคำสั่ง SQL เพื่อดึงข้อมูล
     $sql = "SELECT * FROM tbproduct WHERE id = ?";
     $stmt = $conn->prepare($sql);
