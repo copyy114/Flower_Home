@@ -1,66 +1,42 @@
-<?php include('header.php'); ?> 
-<!-- <link href="assets/css/style-contant.css" rel="stylesheet"> -->
+<?php include('header.php'); ?>
+<link href="assets/css/style-contant.css" rel="stylesheet">
 
+<main id="main" >
 <section id="contact">
-<div class="container">
-  <h1 class="section-title">ติดต่อเราได้ที่..</h1>
-  <style>
-        .center-img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 20px;
-            max-width: 500px;
-            height: 500px;
-        }
+  <div class="container">
+    <h1 class="section-title">ติดต่อเราได้ที่..</h1>
+    <style>
+      .center-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 20px;
+        max-width: 500px;
+        height: 500px;
+      }
     </style>
-     <a href="https://www.facebook.com/sooksomflowers"><img src="assets/img/contact-img.jpg"  class="center-img" alt=""></a>
-      <!-- <div class="direct-contact-container">
-
+    <div class="row">
+      <div class="col-6">
+        <a href="https://www.facebook.com/sooksomflowers"><img src="assets/img/contact-img.jpg" class="center-img"alt=""></a>
+      </div>
+      <div class="col-6">
         <ul class="contact-list">
-          <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">.......</span></i></li>
-          
-          <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:0000000000" title="โทร">0000000000</a></span></i></li>
-          
-          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">flowerhome@gmail.com</a></span></i></li>
-          
+          <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:0817669227">081-766-9227</a></span></i></li>
+          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#">suwannee@gmail.com</a></span></i></li>
+          <li class="list-item"><i class="fa fa-facebook-official fa-2x"><span class="contact-text facebook"><a href="https://www.facebook.com/sooksomflowers">บ้านดอกไม้ประดิษฐ์</a></span></i></li>
         </ul>
-
-        <hr>
-        <ul class="social-media-list">
-          <li><a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-facebook" aria-hidden="true"></i></a>
-          </li>
-          <li><a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-line" aria-hidden="true"></i></a>
-          </li>
-          <li><a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-wedsite" aria-hidden="true"></i></a>
-          </li>
-          <li><a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-instagram" aria-hidden="true"></i></a>
-          </li>       
-        </ul>
-        <hr>
-      </div> -->
-
       </div>
-  
+    </div>
 </section>
+</div>
+<div class="map">
+  <iframe style="border:0; width: 100%; height: 350px;"
+    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=7.61557797015850,100.0809003208509+(My%20Business%20Name)&amp;t=k&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+    frameborder="0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</section><!-- End Contact Section -->
 
-       <hr>
+</main><!-- End #main -->
 
-      </div>
 
-      <div class="map">
-        <iframe style="border:0; width: 100%; height: 350px;" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=7.61557797015850,100.0809003208509+(My%20Business%20Name)&amp;t=k&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" frameborder="0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-            <div class="container mt-5">
-
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
- 
-  <?php include('footer.php'); ?> 
+<?php include('footer.php'); ?>
