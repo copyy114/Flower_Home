@@ -22,7 +22,7 @@
       <div class="col-6">
         <ul class="contact-list">
           <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:0817669227">081-766-9227</a></span></i></li>
-          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#">suwannee@gmail.com</a></span></i></li>
+          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:suwannee@gmail.com">suwannee@gmail.com</a></span></i></li>
           <li class="list-item"><i class="fa fa-facebook-official fa-2x"><span class="contact-text facebook"><a href="https://www.facebook.com/sooksomflowers">บ้านดอกไม้ประดิษฐ์</a></span></i></li>
         </ul>
       </div>
