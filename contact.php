@@ -14,7 +14,7 @@
             height: 500px;
         }
     </style>
-     <img src="assets/img/contact-img.jpg"  class="center-img" alt="">
+     <a href="https://www.facebook.com/sooksomflowers"><img src="assets/img/contact-img.jpg"  class="center-img" alt=""></a>
       <!-- <div class="direct-contact-container">
 
         <ul class="contact-list">
