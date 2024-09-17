@@ -121,6 +121,7 @@ input[type="reset"]:hover {
     justify-content: center;
     align-items: center;
     margin: 20px 0;
+    
 }
 
 .pagination a,
@@ -128,9 +129,9 @@ input[type="reset"]:hover {
     display: inline-block;
     padding: 8px 12px;
     margin: 0 5px;
-    border: 1px solid #007bff;
+    border: 1px solid #ff8ad8;
     border-radius: 5px;
-    color: #007bff;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     text-align: center;
@@ -138,14 +139,14 @@ input[type="reset"]:hover {
 }
 
 .pagination a:hover {
-    background-color: #0056b3;
+    background-color: #ff8ad8;
     color: white;
 }
 
 .pagination .active {
-    background-color: #007bff;
+    background-color: #ff8ad8;
     color: white;
-    border: 1px solid #007bff;
+    border: 1px solid #ff8ad8;
 }
 
 .pagination .disabled {
@@ -180,15 +181,3 @@ img {
     margin-top: 20px;
 }
 
-.pagination a {
-    padding: 8px 16px;
-    margin: 0 4px;
-    text-decoration: none;
-    color: #007bff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.pagination a:hover {
-    background-color: #f1f1f1;
-}

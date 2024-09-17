@@ -205,7 +205,7 @@ try {
                     $start_page = max(1, $current_page - 1);
                     $end_page = min($total_pages, $start_page + 2);
                     for ($i = $start_page; $i <= $end_page; $i++) {
-                        echo '<a href="?page=' . $i . '" class="btn btn-sm ' . ($i == $current_page ? 'btn-info' : 'btn-primary') . '">' . $i . '</a>';
+                        echo '<a href="?page=' . $i . '" class="btn btn-sm ' . ($i == $current_page ? : 'btn-primary') . '">' . $i . '</a>';
                     }
         
                     // ปุ่มไปหน้าถัดไป
