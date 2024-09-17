@@ -63,11 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ยืนยันการสั่งซื้อและชำระเงิน</title>
     <script>
         // ตรวจสอบว่ามีการอัปโหลดสลิปชำระเงินก่อนกดวางคำสั่งซื้อ
@@ -92,8 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     </script>
-</head>
-<body>
+
     <div class="container">
         <h2>ยืนยันการสั่งซื้อและชำระเงิน</h2>
         <hr>
@@ -132,29 +127,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <p>ไม่พบสินค้าในตะกร้า</p>
                 <?php endif; ?>
             </div>
+            <hr>
+<style>
+    .qr-code {
+    display: flex;
+    justify-content: center;
+}
+</style>
+
             <div class="col-8">
-                <style>
-                    .qr-code{
-                        display: block;
-        margin-left: 15%;
-        margin-right: auto;
-        margin-bottom: 10px;
-        max-width: auto;
-        height: auto;
-                    }
-                </style>
                 <h4>ชำระเงิน</h4>
-                <div class="qr-code">
-                    <!-- ใส่ QR Code สำหรับการชำระเงินที่นี่ -->
-                    <img src="../assets/img/qr_code_image.png" alt="QR Code สำหรับชำระเงิน">
-                </div>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" onsubmit="return validateForm();">
-                    <div class="form-group">
-                        <label for="payment_slip">อัปโหลดสลิป:</label>
-                        <input type="file" class="form-control-file" id="payment_slip" name="payment_slip" onchange="checkSlipUploaded();" required>
-                    </div>                  
+                    <div class="row">   
+                        <div class="col-8">
+                            <h6 style="color: red;">กรุณาอัปโหลดสลิปการชำระเงินก่อนทำการสั่งซื้อ</h6>
+                            <h4>PromptPay : 0817669227</h4>
+                            <hr>
+                            <label for="payment_slip">อัปโหลดสลิป:</label>
+                            <input type="file" class="form-control-file" id="payment_slip" name="payment_slip" onchange="checkSlipUploaded();" required>     
+                        </div>
+                        <div class="col-4">
+                            <div class="qr-code">
+                                <img src="../assets/img/qr_code_image.png" alt="QR Code สำหรับชำระเงิน">
+                            </div>
+                         </div>
+                    </div>
                 </form>
             </div>
+
             <div class="col-4">
                 <h4>รายละเอียด ผู้สั่งชื้อ</h4>
                 <form action="place_order.php" method="POST">
@@ -175,11 +175,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <input type="text" class="form-control" id="phone" name="phone" required>
                     </div>
                     <input type="hidden" name="total" value="<?php echo number_format($total, 2); ?>">
-                    <div class="row w-100">
-                        <div class="col-6">
+                    <div class="row">
+                        <div class="col-6 qr-code">
                             <button type="submit" id="place_order_button" class="btn btn-primary" disabled>วางคำสั่งซื้อ</button>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 qr-code">
                             <button type="reset" class="btn btn-danger">ยกเลิก</button>
                         </div>
                     </div>

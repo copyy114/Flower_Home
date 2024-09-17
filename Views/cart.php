@@ -171,7 +171,7 @@ include('..\header-footer\header_option.php');
                         ?>
 
                         <hr>
-                        <h6>ราคารวมทั่งสิ้น</h6>
+                        <h6>ราคารวมทั้งสิ้น</h6>
                     </div>
                     <div class="col-md-6">
                         <h6><?php echo number_format($total, 2). " บาท"; ?></h6>
@@ -187,7 +187,7 @@ include('..\header-footer\header_option.php');
                             if ($isLoggedIn) {
                                 echo '<a href="checkout.php?action=add&id=' . $id . '" class="btn btn-success"><i class="fas fa-shopping-cart"></i> ยืนยันการสั่งซื้อสินค้า</a>';
                             } else {
-                                echo '<a href="logout.php" class="btn btn-danger"><i class="fas fa-sign-in-alt"></i> กรุณาเข้าสู่ระบบก่อนทำการสั่งซื้อ</a>';
+                                echo '<a href="..\logout.php" class="btn btn-danger"><i class="fas fa-sign-in-alt"></i> กรุณาเข้าสู่ระบบก่อนทำการสั่งซื้อ</a>';
                             }
                         } else {
                             echo '<a href="..\index.php" class="btn btn-warning"><i class="fas fa-cancel"></i> กรุณาเลือกสินค้าก่อนสั่งซื้อ</a>';
