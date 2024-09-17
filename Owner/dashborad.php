@@ -199,7 +199,7 @@ try {
                     echo '<div class="pagination">';
                     
                     // ปุ่มไปหน้าแรก
-                    echo '<a href="?page=1" class="btn btn-sm btn-primary' . ($current_page == 1 ? ' disabled' : '') . '">หน้าแรก</a>';
+                    echo '<a href="?page=1" ' . ($current_page == 1 ? ' disabled' : '') . '">หน้าแรก</a>';
         
                     // ปุ่มตัวเลขหน้า
                     $start_page = max(1, $current_page - 1);
@@ -210,11 +210,11 @@ try {
         
                     // ปุ่มไปหน้าถัดไป
                     if ($current_page < $total_pages) {
-                        echo '<a href="?page=' . ($current_page + 1) . '" class="btn btn-sm btn-primary">หน้าถัดไป</a>';
+                        echo '<a href="?page=' . ($current_page + 1) . '" ">หน้าถัดไป</a>';
                     }
         
                     // ปุ่มไปหน้าสุดท้าย
-                    echo '<a href="?page=' . $total_pages . '" class="btn btn-sm btn-primary' . ($current_page == $total_pages ? ' disabled' : '') . '">หน้าสุดท้าย</a>';
+                    echo '<a href="?page=' . $total_pages . '" ' . ($current_page == $total_pages ? ' disabled' : '') . '">หน้าสุดท้าย</a>';
         
                     echo '</div>';
       } else {

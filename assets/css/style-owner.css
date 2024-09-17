@@ -121,7 +121,6 @@ input[type="reset"]:hover {
     justify-content: center;
     align-items: center;
     margin: 20px 0;
-    
 }
 
 .pagination a,
@@ -131,7 +130,7 @@ input[type="reset"]:hover {
     margin: 0 5px;
     border: 1px solid #ff8ad8;
     border-radius: 5px;
-    color: #ffffff;
+    color: #ff8ad8;
     text-decoration: none;
     font-weight: bold;
     text-align: center;
@@ -181,3 +180,18 @@ img {
     margin-top: 20px;
 }
 
+.pagination a {
+    padding: 8px 16px;
+    margin: 0 4px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #ffa8c2;
+    border: 1px solid #ffa8c2;
+    border-radius: 4px;
+}
+
+.pagination a:hover {
+    background-color: #ff8ad8;
+    border: 1px solid #ff8ad8;
+
+}
