@@ -229,6 +229,105 @@ try {
 }
 ?>
 
+
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5 mb-lg-0 mb-4">
+      <div class="card ">
+        <div class="card-header pb-0 p-3">
+          <div class="d-flex justify-content-between">
+            <h6 class="mb-2">รายการสินค้าแนะนำ</h6>
+          </div>
+        </div>
+        <div class="table-responsive">
+    <?php
+          include('..\data\conn.php');
+
+          $sql = "SELECT * FROM tbproduct WHERE is_recommended = TRUE";
+          $result = $conn->query($sql);
+          if ($result->num_rows > 0) {
+            echo '<table class="table align-items-center">';
+            echo '<tbody>';
+              while ($row = $result->fetch_assoc()) {
+                $id = htmlspecialchars($row["id"]);
+                $fileName = htmlspecialchars($row["img_path"]);
+                $filePath = '../uploaded_files/' . $fileName;
+                $name = htmlspecialchars($row["name"]);
+                $description = htmlspecialchars($row["description"]);
+                $prevPrice = (float) htmlspecialchars($row["prev_price"]);
+                $currentPrice = (float) htmlspecialchars($row["current_price"]);
+                $is_recommended = htmlspecialchars($row["is_recommended"]);
+
+                if ($is_recommended = '1'){
+                  $recommended =  '<span class="badge bg-info" >สินค้าแนะนำ</span>';
+
+                }
+          
+                      echo "<tr class='table-primar'>
+                      <td class='w-30'>
+                        <div class='d-flex px-2 py-1 align-items-center'>
+                          <div class='ms-4'>
+                               <a href=$filePath  class='gallery-lightbox'>
+                                 <div><img src=$filePath class='img-fluid-edit-prodution' width='100' height='100'
+                                  alt='ไม่มีรูปภาพ'></div>
+                                 </a>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class='text-center'>
+                          <p class='text-xs font-weight-bold mb-0'>ชื่อสินค้าแนะนำ</p>
+                          <h6 class='text-sm mb-0'> $name</h6>
+                        </div>
+                      </td>
+                      <td>
+                        <div class='text-center'>
+                          <p class='text-xs font-weight-bold mb-0'>ตั้งค่าสินค้า</p>
+                          <h6 class='text-sm mb-0'>$recommended</h6>
+                        </div>
+                      </td>
+                    </tr>";
+               
+              }
+              echo '</tbody>';
+              echo '</table>';
+          } else {
+              // Define fallback items
+              $fallbackItems = [
+                  ['name' => 'ตัวอย่างสินค้า', 'description' => 'รายละเอียดตัวอย่างสินค้า', 'image' => ''],
+                  ['name' => 'ตัวอย่างสินค้า', 'description' => 'รายละเอียดตัวอย่างสินค้า', 'image' => ''],
+                  ['name' => 'ตัวอย่างสินค้า', 'description' => 'รายละเอียดตัวอย่างสินค้า', 'image' => ''],
+              ];
+              foreach ($fallbackItems as $item) {
+                  echo "<div class='col-lg-4'>";
+                  echo "<div class='box' style='position: relative;'>";
+                  echo "<h2>" . htmlspecialchars($item['name']) . "</h2>";
+                  echo "<h5>" . htmlspecialchars($item['description']) . "</h5>";
+                  echo "<img src='assets/img/bestseller.png' alt='Badge' style='position: absolute; top: 0; right: 0; width: 100px; height: auto;'>";
+                  echo "<img src='" . htmlspecialchars($item['image']) . "' alt='รูปตัวอย่างสินค้า' width='350' height='400'>";
+                  echo "<span>";
+                  echo "Rating : ---";
+                  echo "</span>";
+                  echo "</div>";
+                  echo "</div>";
+              }
+          }
+      
+?>
+        </div>
+      </div>
+    </div>
+
+
+
+  <!-- echo "      <h5>รายละเอียด : $description  </h5>"; -->
+  </div>
+  </main>
+  </div>
+
+</section>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.new-badge').forEach(function(badge) {
@@ -261,59 +360,4 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-        </div>
-      </div>
-    </div>
-    <!-- <div class="col-lg-5">
-      <div class="card">
-        <div class="card-header pb-0 p-3">
-          <h6 class="mb-0">#</h6>
-        </div>
-        <div class="card-body p-3">
-          <ul class="list-group">
-            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-              <div class="d-flex align-items-center">
-                <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                  <i class="ni ni-mobile-button text-white opacity-10"></i>
-                </div>
-                <div class="d-flex flex-column">
-                  <h6 class="mb-1 text-dark text-sm">ยังไม่แสดง</h6>
-
-                </div>
-              </div>
-              <div class="d-flex">
-                <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i
-                    class="ni ni-bold-right" aria-hidden="true"></i></button>
-              </div>
-            </li>
-            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-              <div class="d-flex align-items-center">
-                <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                  <i class="ni ni-tag text-white opacity-10"></i>
-                </div>
-                <div class="d-flex flex-column">    
-                </div>
-              </div>
-              <div class="d-flex">
-                <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i
-                    class="ni ni-bold-right" aria-hidden="true"></i></button>
-              </div>
-            </li>
-
-
-          </ul>
-        </div>
-      </div>
-    </div> -->
-  </div>
-
-
-
-  </div>
-  </main>
-  </div>
-
-</section>
-
-
 <?php include('..\header-footer\footer.php'); ?>
