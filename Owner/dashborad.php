@@ -171,12 +171,6 @@ try {
                       </td>
                       <td>
                         <div class='text-center'>
-                          <p class='text-xs font-weight-bold mb-0'>ราคา:</p>
-
-                        </div>
-                      </td>
-                      <td>
-                        <div class='text-center'>
                           <p class='text-xs font-weight-bold mb-0'>จำนวน:</p>
                           <h6 class='text-sm mb-0'>" . $row["quantity"] . " ชิ้น</h6>
                         </div>
