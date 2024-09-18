@@ -39,6 +39,12 @@ CREATE TABLE `orders` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+-- -------------------------------------------------------- แก้ไขเพิ่ม ยังอัพโหลดไม่ได้อยู่
+ALTER TABLE orders
+ADD COLUMN order_id VARCHAR(255) NOT NULL UNIQUE AFTER id,
+ADD COLUMN payment_status ENUM('pending', 'completed', 'failed') DEFAULT 'pending' AFTER total_amount,
+ADD COLUMN user_id INT AFTER order_id;
+-- --------------------------------------------------------
 --
 -- Dumping data for table `orders`
 --
@@ -124,7 +130,17 @@ INSERT INTO `users` (`id`, `fname`, `username`, `password`, `user_type`, `last_l
 --
 -- Indexes for dumped tables
 --
-
+-- --------------------------------------------------------
+--
+-- Table structure for table `payment_slips`
+--
+CREATE TABLE payment_slips (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id VARCHAR(255) NOT NULL,
+    slip_image LONGBLOB,
+    FOREIGN KEY (order_id) REFERENCES orders(order_id)
+);
+-- --------------------------------------------------------
 --
 -- Indexes for table `orders`
 --
@@ -195,3 +211,5 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
